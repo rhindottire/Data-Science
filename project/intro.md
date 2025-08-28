@@ -1,11 +1,24 @@
-# Welcome to your Jupyter Book
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+<pre>
+  NIM     : 230411100197
+  NAME    : ACHMAD RIDHO FA'IZ
+  EMAIL   : achmadaliridho46@gmail.com
+  MAJOR   : Teknik Informatika
+  SUBJECT : Proyek Sains Data
+</pre>
 
-Check out the content pages bundled with this sample book to see more.
+---
+
+# Welcome to my Data Science Pages
+
+This page serves as a resource hub for exploring key concepts in **Data Science**. It provides structured discussions on various topics, references to essential learning materials, and curated study resources to advance your knowledge of the field.
 
 ```{tableofcontents}
 ```
+
+---
+
+# References and Study Resources
+
+To master Data Science, it is essential to build a strong foundation in Data Mining first. Start your journey by exploring my comprehensive Data Mining tutorials, presented through interactive Jupyter Notebooks, available on my GitHub Pages: [Achmad Ridho's Data Mining Notes](https://rhindottire.github.io/Data-Mining/intro.html).
