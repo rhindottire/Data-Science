@@ -1,0 +1,17 @@
+jupyter-book
+ghp-import
+nbformat
+nbconvert
+
+pandas
+numpy
+matplotlib
+seaborn
+sqlalchemy
+python-dotenv
+scikit-learn
+cryptography
+pymysql
+psycopg2-binary
+
+ydata-profiling
