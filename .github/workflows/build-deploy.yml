@@ -1,0 +1,55 @@
+name: Build and Deploy Jupyter Book
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      # - name: Install dependencies
+      #   run: |
+      #     pip install -r requirements.txt
+      #     pip install pandas numpy matplotlib seaborn sqlalchemy python-dotenv scikit-learn pymysql psycopg2-binary jupyter nbconvert
+
+      # - name: Set environment variables
+      #   run: |
+      #     echo "::add-mask::${{ secrets.MYSQL_URL }}"
+      #     echo "::add-mask::${{ secrets.POSTGRES_URL }}"
+      #     echo "MYSQL_URL=${{ secrets.MYSQL_URL }}" >> $GITHUB_ENV
+      #     echo "POSTGRES_URL=${{ secrets.POSTGRES_URL }}" >> $GITHUB_ENV
+
+      # - name: Restore ca.pem from secret
+      #   run: |
+      #     mkdir -p certs
+      #     echo "${{ secrets.CA_PEM_BASE64 }}" | base64 -d > certs/ca.pem
+
+      # - name: Run Jupyter Notebook (Execute pendata/Tugas1.ipynb)
+      #   env:
+      #     SSL_ROOT_CERT: certs/ca.pem
+      #   run: |
+      #     jupyter nbconvert --to notebook --execute pendata/Tugas1.ipynb --output Tugas.ipynb
+
+      - name: Build Jupyter Book
+        run: |
+          jupyter-book build project/
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          ghp-import -n -p -f project/_build/html -b gh-pages
