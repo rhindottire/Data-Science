@@ -5,7 +5,7 @@
   NAME    : ACHMAD RIDHO FA'IZ
   EMAIL   : achmadaliridho46@gmail.com
   MAJOR   : Teknik Informatika
-  SUBJECT : Proyek Sains Data
+  SUBJECT : Proyek Sain Data
 </pre>
 
 ---
@@ -22,3 +22,5 @@ This page serves as a resource hub for exploring key concepts in **Data Science*
 # References and Study Resources
 
 To master Data Science, it is essential to build a strong foundation in Data Mining first. Start your journey by exploring my comprehensive Data Mining tutorials, presented through interactive Jupyter Notebooks, available on my GitHub Pages: [Achmad Ridho's Data Mining Notes](https://rhindottire.github.io/Data-Mining/intro.html).
+- [Harvard Univ](https://pll.harvard.edu/subject/data-science)
+- [Curr](https://dsi-data-curriculum.gitbook.io/ds-curriculum/)
