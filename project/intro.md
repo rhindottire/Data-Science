@@ -21,6 +21,7 @@ This page serves as a resource hub for exploring key concepts in **Data Science*
 
 # References and Study Resources
 
-To master Data Science, it is essential to build a strong foundation in Data Mining first. Start your journey by exploring my comprehensive Data Mining tutorials, presented through interactive Jupyter Notebooks, available on my GitHub Pages: [Achmad Ridho's Data Mining Notes](https://rhindottire.github.io/Data-Mining/intro.html).
-- [Harvard Univ](https://pll.harvard.edu/subject/data-science)
-- [Curr](https://dsi-data-curriculum.gitbook.io/ds-curriculum/)
+To master **Data Science**, it is essential to build a strong foundation in _Data Mining_ first. Check out my _Data Mining_ in this Jupyter Book, then dive deeper with these Data Science resources:
+- My personal book: [Data Mining](https://rhindottire.github.io/Data-Mining/intro.html)
+- **Data Science** Courses: [Harvard University](https://pll.harvard.edu/subject/data-science)
+- **Data Science** Curriculum: [Gitbook and Roadmap](https://dsi-data-curriculum.gitbook.io/ds-curriculum/)

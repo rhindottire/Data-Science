@@ -3,7 +3,7 @@
 
 title: Data-Science Project
 author: ACHMAD RIDHO FA'IZ
-logo: Edho.png
+logo: img/Edho.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

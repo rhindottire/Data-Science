@@ -1,9 +1,0 @@
-Tugas 1:
-- Mencari data di kaggle
-- https://www.kaggle.com/datasets/vinothkannaece/mobiles-and-laptop-sales-data
-- Install = {
-    - https://exploratory.io/
-    - https://www.microsoft.com/en-us/power-platform/products/power-bi/downloads
-    - https://orangedatamining.com/download/
-}
-- Setup https://jupyterbook.org/en/stable/intro.html
