@@ -12,7 +12,7 @@
 
 # Welcome to my Data Science Pages
 
-This page serves as a resource hub for exploring key concepts in **Data Science**. It provides structured discussions on various topics, references to essential learning materials, and curated study resources to advance your knowledge of the field.
+This page serves as a resource hub for exploring key concepts in **Data Science**. It provides structured discussions on various topics, and curated study resources to advance your knowledge of the field.
 
 ```{tableofcontents}
 ```
@@ -25,3 +25,6 @@ To master **Data Science**, it is essential to build a strong foundation in _Dat
 - My personal book: [Data Mining](https://rhindottire.github.io/Data-Mining/intro.html)
 - **Data Science** Courses: [Harvard University](https://pll.harvard.edu/subject/data-science)
 - **Data Science** Curriculum: [Gitbook and Roadmap](https://dsi-data-curriculum.gitbook.io/ds-curriculum/)
+
+
+soal kesehatan terhadap pasien yang datang ke rumah sakit untuk menentukan decision apa yang akan di lakukan  
