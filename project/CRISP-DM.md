@@ -2,9 +2,9 @@
 
 **CRISP-DM** (Cross-Industry Standard Process for Data Mining) adalah kerangka kerja standar untuk proses penambangan data yang terdiri dari enam tahap utama:
 
-1. **Business Understanding**: Memahami tujuan bisnis dan kebutuhan proyek untuk mendefinisikan masalah yang akan diselesaikan.
-2. **Data Understanding**: Mengumpulkan dan mengeksplorasi data untuk mengenali karakteristik dan kualitasnya.
-3. **Data Preparation**: Membersihkan dan memformat data agar siap digunakan, termasuk penanganan data yang hilang atau duplikat.
+1. **Business Understanding**: Memahami tujuan strategis bisnis dan kebutuhan proyek secara mendalam untuk merumuskan masalah yang akan diselesaikan.
+2. **Data Understanding**: Mengumpulkan data yang relevan dan menganalisis karakteristiknya secara mendalam untuk memahami potensi dan keterbatasannya.
+3. **Data Preparation**: Menyiapkan data agar siap digunakan untuk analisis atau pemodelan melalui proses pembersihan dan transformasi.
 4. **Modeling**: Menerapkan teknik pemodelan (misalnya, machine learning) untuk membangun solusi berdasarkan data.
 5. **Evaluation**: Mengevaluasi model untuk memastikan bahwa hasilnya memenuhi tujuan bisnis.
 6. **Deployment**: Menerapkan model ke lingkungan produksi dan memonitor hasilnya.
@@ -15,7 +15,7 @@ Untuk detail lengkap, lihat [Data Mining Process](https://rhindottire.github.io/
 
 Komunitas data science di Indonesia memainkan peran krusial dalam membangun ekosistem data yang inklusif, terutama di tengah pertumbuhan digital yang pesat. Komunitas ini tidak hanya menjadi tempat berbagi pengetahuan tentang data science, machine learning, dan analitik, tetapi juga mendorong inovasi berbasis data untuk dampak sosial. Di Indonesia, di mana akses terhadap literasi data masih terbatas bagi kelompok under-served seperti perempuan, masyarakat pedesaan, dan UMKM, komunitas seperti ini membantu menjembatani kesenjangan melalui pelatihan, kolaborasi, dan advokasi.
 
-Salah satu komunitas terkemuka adalah **Data Science Indonesia (DSI)**, sebuah organisasi nirlaba yang didirikan untuk membangun ekosistem pemecah masalah data teknologi kolaboratif demi peningkatan kesejahteraan sosial. 
+Salah satu komunitas terkemuka adalah **Data Science Indonesia (DSI)**, organisasi nirlaba yang didirikan untuk membangun ekosistem pemecah masalah data teknologi kolaboratif demi peningkatan kesejahteraan sosial. 
 
 ### Visi dan Misi DSI
 - **Visi**: Menciptakan ekosistem kolaboratif yang menghubungkan kelompok under-served dengan kebutuhan pasar kerja melalui sertifikasi nasional.

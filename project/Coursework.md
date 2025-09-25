@@ -29,3 +29,11 @@
     - menentukan sumber data - Sumber Web
 3. Melihat 10 baris pertama data menggunakan script python head()
 4. Install library pycaret (pip install pycaret)
+
+## Tugas 4
+1. Download dataset ecoli dari UCI https://archive.ics.uci.edu/dataset/39/ecoli
+2. Simpan didatabase MySQL
+3. Tampilkan data dalam scatter plot menggunakan PCA.
+    - PCA mentransformasi data menjadi dimensi rendah (2)
+4. Lakukan penyeimbangan data menggunakan ADASYN
+5. Ploting data dari data yang diimbangkan menggunakan PCA, tandai data data hasil generatenya
