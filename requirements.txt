@@ -1,19 +1,21 @@
 jupyter-book
 ghp-import
-nbformat
 nbconvert
+nbformat
 
-pandas
-numpy
-matplotlib
-seaborn
-sqlalchemy
-python-dotenv
-scikit-learn
 cryptography
-pymysql
-psycopg2-binary
-tabulate
-pycaret
+python-dotenv
 
+matplotlib
+numpy
+pandas
+pycaret
+scikit-learn
+seaborn
+tabulate
 ydata-profiling
+
+openpyxl
+psycopg2-binary
+pymysql
+sqlalchemy

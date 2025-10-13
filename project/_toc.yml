@@ -4,14 +4,14 @@
 format: jb-book
 root: intro
 chapters:
-- file: CRISP-DM
-  sections:
-    - file: CRISP-DM/business
-    - file: CRISP-DM/data
-    - file: CRISP-DM/preprocessing
-    - file: CRISP-DM/model
-    - file: CRISP-DM/evaluation
-    - file: CRISP-DM/deployment
+# - file: CRISP-DM
+#   sections:
+#     - file: CRISP-DM/business
+#     - file: CRISP-DM/data
+#     - file: CRISP-DM/preprocessing
+#     - file: CRISP-DM/model
+#     - file: CRISP-DM/evaluation
+#     - file: CRISP-DM/deployment
 - file: Coursework
   sections:
     - file: Coursework/tugas1
@@ -19,8 +19,8 @@ chapters:
     - file: Coursework/tugas3
     - file: Coursework/tugas4
     - file: Coursework/tugas5
-    - file: Coursework/tugas6
-    - file: Coursework/tugas7
-    - file: Coursework/tugas8
+    # - file: Coursework/tugas6
+    # - file: Coursework/tugas7
+    # - file: Coursework/tugas8
 - file: UTS
 - file: UAS
