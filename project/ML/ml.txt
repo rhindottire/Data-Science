@@ -1,0 +1,2 @@
+https://ml-course.github.io/master/intro.html
+https://www.kaggle.com/code/kashnitsky/topic-1-exploratory-data-analysis-with-pandas
