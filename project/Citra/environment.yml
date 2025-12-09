@@ -1,0 +1,26 @@
+name: cnn_project
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - opencv
+  - scikit-image
+  - matplotlib
+  - ipykernel
+  - jupyter
+  - notebook
+  - pip
+  - pillow
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  - pip:
+      - opencv-python
+      - scikit-learn
