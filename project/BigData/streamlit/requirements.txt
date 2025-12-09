@@ -1,0 +1,12 @@
+streamlit
+pandas
+folium
+streamlit-folium
+matplotlib
+seaborn
+langdetect
+nltk
+symspellpy
+Sastrawi
+scikit-learn
+
