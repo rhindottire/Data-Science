@@ -38,7 +38,7 @@
 4. Lakukan penyeimbangan data menggunakan ADASYN
 5. Ploting data dari data yang diimbangkan menggunakan PCA, tandai data data hasil generatenya
 
-## Tugas 5  
+## Tugas 5
 Klasifikasi menggunakan Naive Bayes
 1. Data belum diseimbangkan
 2. Data diseimbangkan menggunakan smote
@@ -59,6 +59,14 @@ Dataset penyakit tiroid dari repositori UCI Machine Learning adalah dataset i ya
 (Gunakan Knime)
 1.	Silahkan dataset dipecah menjadi 2 bagian untuk fitur kategorical disimpan di postgresql untuk  dan untuk atribut numerik dan label  simpan di database mysql
 2.	Gabungkan 2 dataset tersebut
-3.	Lakukan preprocessing 
+3.	Lakukan preprocessing
 4.	Lakukan modelling klasifikasi ( gunakan 3 model klasifikasi )
 5.	Evaluasi hasil dari 3 model ( tentukan mana yang terbaik)
+
+## Tugas 6
+1. Mengumpulkan data dan dijadikan CSV
+2. Memprosessing data jika ada missing values  dengan interpolasi
+3. Membentuk data supervised
+4. Melakukan normalisai data (min-max atau zscore (standar scale di sklearn))
+5. Memebuat model dengan K-NN regression
+    Melakukan experiment dengan beberapa fitur (menentukan berapa lag data : berkaitan dengan no 3)
