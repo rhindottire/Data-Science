@@ -26,3 +26,6 @@ aeon
 tensorflow
 torch
 sktime
+
+kagglehub
+statsmodels
