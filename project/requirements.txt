@@ -19,3 +19,13 @@ openpyxl
 psycopg2-binary
 pymysql
 sqlalchemy
+
+ipykernel
+opencv-python
+aeon
+# tensorflow
+torch
+sktime
+
+kagglehub
+statsmodels

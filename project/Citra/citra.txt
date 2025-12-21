@@ -1,0 +1,50 @@
+1.Peningkatan Kualitas & Resolusi
+* Image Resizing
+* Image Upscaling (Super Resolution)
+* Image Normalization
+* Histogram Equalization
+* Contrast Limited Adaptive Histogram Equalization (CLAHE)
+* Image Denoising (Gaussian Blur, Median Filter)
+
+2.Data Augmentation
+* Horizontal / Vertical Flip
+* Rotation
+* Random Crop
+* Zoom In / Zoom Out
+* Brightness & Contrast Adjustment
+* Color Jittering
+* CutMix / MixUp
+
+3.Deteksi & Fokus Objek
+* Object Detection
+* Bounding Box Cropping
+* Region of Interest (ROI) Extraction
+* Selective Search
+* Edge Detection (Canny, Sobel)
+
+4.Segmentasi & Penghapusan Background
+* Image Segmentation
+* Semantic Segmentation
+* Instance Segmentation
+* Background Removal
+* Foreground Extraction
+* GrabCut Algorithm
+* Mask R-CNN Based Segmentation
+
+5.Transformasi Warna & Fitur
+* RGB to Grayscale
+* RGB to HSV Conversion
+* Color Space Transformation
+* Feature Scaling
+* Channel Normalization
+
+6.Standarisasi Input Model
+* Image Padding
+* Aspect Ratio Preservation
+* Batch Normalization (di level model)
+
+7.Teknik Tambahan (Advanced)
+* Transfer Learning Preprocessing
+* Pretrained Model Input Standardization
+* Noise Injection
+* Data Balancing (Oversampling / Undersampling)

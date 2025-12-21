@@ -23,7 +23,7 @@ sqlalchemy
 ipykernel
 opencv-python
 aeon
-tensorflow
+# tensorflow
 torch
 sktime
 
