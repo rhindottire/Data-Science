@@ -29,3 +29,9 @@ sktime
 
 kagglehub
 statsmodels
+
+nltk
+wordcloud
+symspellpy
+langdetect
+Sastrawi
