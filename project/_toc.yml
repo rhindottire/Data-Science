@@ -34,8 +34,8 @@ chapters:
       - file: Coursework/tugas1
       - file: Coursework/tugas2
       - file: Coursework/tugas3
-      - file: Coursework/tugas4
-      - file: Coursework/tugas5
+      # - file: Coursework/tugas4
+      # - file: Coursework/tugas5
       # - file: Coursework/tugas6
       # - file: Coursework/tugas7
       # - file: Coursework/tugas8
