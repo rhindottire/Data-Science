@@ -4,3 +4,4 @@
 .vscode
 /dump
 *.bat
+_build

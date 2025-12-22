@@ -20,6 +20,9 @@ psycopg2-binary
 pymysql
 sqlalchemy
 
+openeo
+xarray
+
 ipykernel
 opencv-python
 aeon

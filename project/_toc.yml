@@ -4,40 +4,40 @@
 format: jb-book
 root: intro
 chapters:
-- file: BigData
-  sections:
-    - file: BigData/Business
-    - file: BigData/EDA
-    - file: BigData/Input
-    - file: BigData/Modeling
-    - file: BigData/Output
-    - file: BigData/Production
-- file: Citra
-  sections:
-    - file: Citra/edge_morphology_praktikum
-    - file: Citra/operasi_geometrik_spatial_filtering
-    - file: Citra/CNN
-- file: ML
-  sections:
-    - file: ML/Ensemble_Learning_Notebook
-    - file: ML/grad_boost_rev
-- file: CRISP-DM
-  sections:
-    - file: CRISP-DM/Business
-    - file: CRISP-DM/EDA
-    - file: CRISP-DM/Input
-    - file: CRISP-DM/Modeling
-    - file: CRISP-DM/Output
-    - file: CRISP-DM/Production
-- file: Coursework
-  sections:
-    - file: Coursework/tugas1
-    - file: Coursework/tugas2
-    - file: Coursework/tugas3
-    - file: Coursework/tugas4
-    - file: Coursework/tugas5
-    # - file: Coursework/tugas6
-    # - file: Coursework/tugas7
-    # - file: Coursework/tugas8
-- file: UTS
-- file: UAS
+  # - file: BigData
+  #   sections:
+  #     - file: BigData/Business
+  #     - file: BigData/EDA
+  #     - file: BigData/Input
+  #     - file: BigData/Modeling
+  #     - file: BigData/Output
+  #     - file: BigData/Production
+  - file: Citra
+    sections:
+      # - file: Citra/edge_morphology_praktikum
+      # - file: Citra/operasi_geometrik_spatial_filtering
+      - file: Citra/CNN
+  # - file: ML
+  #   sections:
+  #     - file: ML/Ensemble_Learning_Notebook
+  #     - file: ML/grad_boost_rev
+  - file: CRISP-DM
+    sections:
+      - file: CRISP-DM/Business
+      - file: CRISP-DM/EDA
+      - file: CRISP-DM/Input
+      - file: CRISP-DM/Modeling
+      - file: CRISP-DM/Output
+      - file: CRISP-DM/Production
+  - file: Coursework
+    sections:
+      - file: Coursework/tugas1
+      - file: Coursework/tugas2
+      - file: Coursework/tugas3
+      - file: Coursework/tugas4
+      - file: Coursework/tugas5
+      # - file: Coursework/tugas6
+      # - file: Coursework/tugas7
+      # - file: Coursework/tugas8
+  - file: UTS
+  - file: UAS
