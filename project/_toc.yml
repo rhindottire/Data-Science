@@ -8,10 +8,10 @@ chapters:
     sections:
       - file: BigData/Business
       - file: BigData/EDA
-      # - file: BigData/Input
+      - file: BigData/Input
       - file: BigData/Modeling
-      # - file: BigData/Output
-      # - file: BigData/Production
+      - file: BigData/Output
+      - file: BigData/Production
   - file: Citra
     sections:
       - file: Citra/courseworks/edge_morphology_praktikum
@@ -20,7 +20,10 @@ chapters:
       - file: Citra/CNN
   - file: ML
     sections:
-      - file: ML/courseworks/Ensemble_Learning_Notebook
+      - file: ML/KMeans
+      - file: ML/Imputation
+      - file: ML/UTS
+      - file: ML/Ensemble
       - file: ML/UAS
   - file: CRISP-DM
     sections:
