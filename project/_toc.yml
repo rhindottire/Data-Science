@@ -4,23 +4,24 @@
 format: jb-book
 root: intro
 chapters:
-  # - file: BigData
-  #   sections:
-  #     - file: BigData/Business
-  #     - file: BigData/EDA
-  #     - file: BigData/Input
-  #     - file: BigData/Modeling
-  #     - file: BigData/Output
-  #     - file: BigData/Production
+  - file: BigData
+    sections:
+      - file: BigData/Business
+      - file: BigData/EDA
+      # - file: BigData/Input
+      - file: BigData/Modeling
+      # - file: BigData/Output
+      # - file: BigData/Production
   - file: Citra
     sections:
-      # - file: Citra/edge_morphology_praktikum
-      # - file: Citra/operasi_geometrik_spatial_filtering
+      - file: Citra/courseworks/edge_morphology_praktikum
+      - file: Citra/courseworks/operasi_geometrik_spatial_filtering
+      - file: Citra/230411100197_ACHMAD RIDHO FA'IZ_UTS PCD_A
       - file: Citra/CNN
-  # - file: ML
-  #   sections:
-  #     - file: ML/Ensemble_Learning_Notebook
-  #     - file: ML/grad_boost_rev
+  - file: ML
+    sections:
+      - file: ML/courseworks/Ensemble_Learning_Notebook
+      - file: ML/UAS
   - file: CRISP-DM
     sections:
       - file: CRISP-DM/Business
