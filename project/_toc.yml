@@ -14,10 +14,12 @@ chapters:
       - file: BigData/Production
   - file: Citra
     sections:
-      - file: Citra/courseworks/edge_morphology_praktikum
-      - file: Citra/courseworks/operasi_geometrik_spatial_filtering
-      - file: Citra/230411100197_ACHMAD RIDHO FA'IZ_UTS PCD_A
-      - file: Citra/CNN
+      - file: Citra/morphology
+      - file: Citra//spatial
+      - file: Citra/UTS
+      - file: Citra/UAS # unfinished
+      - file: Citra/CNN # merge later
+      - file: Citra/vision
   - file: ML
     sections:
       - file: ML/KMeans

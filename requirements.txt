@@ -29,6 +29,7 @@ aeon
 # tensorflow
 torch
 sktime
+scikit-image
 
 kagglehub
 statsmodels
