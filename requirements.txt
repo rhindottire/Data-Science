@@ -39,3 +39,5 @@ wordcloud
 symspellpy
 langdetect
 Sastrawi
+
+openai
