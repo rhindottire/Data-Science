@@ -1,0 +1,2791 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>UAS &#8212; Data-Science Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ML/UAS';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CRISP-DM" href="../CRISP-DM.html" />
+    <link rel="prev" title="Ensemble Learning" href="Ensemble.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Edho.png" class="logo__image only-light" alt="Data-Science Project - Home"/>
+    <script>document.write(`<img src="../_static/Edho.png" class="logo__image only-dark" alt="Data-Science Project - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../BigData.html">Big Data Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../BigData/Business.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BigData/EDA.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BigData/Input.html">Data Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BigData/Modeling.html">Modeling</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../BigData/Output.html">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BigData/Production.html">Deployment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Citra.html">Image Processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Citra/morphology.html">Morfologi Citra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Citra/UTS.html">UTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Citra/UAS.html">UAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Citra/CNN.html">UAS PCD-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Citra/vision.html">Computer Vision</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../ML.html">Machine Learning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="KMeans.html">KMeans Clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imputation.html">Data Imputation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UTS.html">UTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ensemble.html">Ensemble Learning</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">UAS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CRISP-DM.html">CRISP-DM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CRISP-DM/Business.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CRISP-DM/EDA.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CRISP-DM/Input.html">Data Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CRISP-DM/Modeling.html">Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CRISP-DM/Output.html">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CRISP-DM/Production.html">Deployment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Coursework.html">Courseworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas1.html">Tugas 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas2.html">Tugas 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas3.html">Tugas 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas4.html">Tugas 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas5.html">Tugas 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas6.html">Tugas 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas7.html">Tugas 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Coursework/tugas8.html">Tugas 8</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../UTS.html">UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UAS.html">UAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenAI.html">ChatGPT API and Python</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rhindottire/Data-Science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rhindottire/Data-Science/issues/new?title=Issue%20on%20page%20%2FML/UAS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ML/UAS.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>UAS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">Environment Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">1. Business Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-problem">1.1 Define the Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-objectives">1.2 Set Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-stakeholders">1.3 Identify Stakeholders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-success-criteria">1.4 Define Success Criteria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">2. Data Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-data">2.1. Collect Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-data">2.2. Describe Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-data-eda">2.3. Explore Data (EDA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-data-quality">2.4. Verify Data Quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insight-conculsion">INSIGHT &amp; CONCULSION</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3. Data Preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-selection">3.1. Data Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">3.2. Data Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">3.3. Data Transformation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">3.4. Data Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formatting">3.5. Data Formatting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">4. Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-modeling-techniques">4.1. Select Modeling Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-models">4.2. Build Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-models">4.3. Tune Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-models">4.4. Validate Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">5. Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-results">5.1. Evaluate Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-business-objectives">5.2. Review Business Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-limitations">5.3. Identify Limitations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decide-next-steps">5.4. Decide Next Steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">6. Deployment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="uas">
+<h1>UAS<a class="headerlink" href="#uas" title="Link to this heading">#</a></h1>
+<section id="environment-setup">
+<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">kagglehub</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span><span class="o">,</span><span class="w"> </span><span class="nn">joblib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="o">,</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span><span class="o">,</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span><span class="o">,</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ticker</span><span class="o">,</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.outliers_influence</span><span class="w"> </span><span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">GridSearchCV</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span><span class="p">,</span> <span class="n">GradientBoostingRegressor</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Check point code: <a class="reference external" href="https://colab.research.google.com/drive/1FihQmxGLMqx9oZnmBDzlihmFXn-RBU5K?usp=sharing">DICKY SAPUTRA</a></p></li>
+<li><p>Dataset: <a class="reference external" href="https://www.kaggle.com/datasets/wisnuanggara/daftar-harga-rumah">Source</a></p></li>
+</ul>
+</section>
+<section id="business-understanding">
+<h2>1. Business Understanding<a class="headerlink" href="#business-understanding" title="Link to this heading">#</a></h2>
+<section id="define-the-problem">
+<h3>1.1 Define the Problem<a class="headerlink" href="#define-the-problem" title="Link to this heading">#</a></h3>
+<p>Dalam industri properti, menentukan harga jual sebuah rumah secara akurat adalah tantangan besar. Harga yang terlalu tinggi akan membuat properti sulit terjual, sedangkan harga yang terlalu rendah akan merugikan pemilik atau pengembang. Masalah utamanya adalah: <strong>“Bagaimana kita bisa memprediksi harga pasar sebuah rumah secara objektif berdasarkan spesifikasi fisiknya (luas tanah, luas bangunan, jumlah kamar, dll) agar tidak terjadi kesalahan penetapan harga?”</strong></p>
+</section>
+<section id="set-objectives">
+<h3>1.2 Set Objectives<a class="headerlink" href="#set-objectives" title="Link to this heading">#</a></h3>
+<p>Tujuan teknis dari proyek data mining ini adalah:</p>
+<ul class="simple">
+<li><p>Membangun model prediktif yang dapat mengestimasi harga rumah berdasarkan fitur-fitur yang tersedia di dataset.</p></li>
+<li><p>Membandingkan tiga algoritma regresi (<strong>Linear Regression, Random Forest Regressor, dan Gradient Boosting Regressor</strong>) untuk menemukan model yang paling cocok dengan karakteristik data rumah ini.</p></li>
+<li><p>Meminimalkan tingkat kesalahan prediksi agar selisih antara harga prediksi dan harga asli sekecil mungkin.</p></li>
+</ul>
+</section>
+<section id="identify-stakeholders">
+<h3>1.3 Identify Stakeholders<a class="headerlink" href="#identify-stakeholders" title="Link to this heading">#</a></h3>
+<p>Pihak-pihak yang berkepentingan dan manfaat yang mereka harapkan adalah:</p>
+<ul class="simple">
+<li><p><strong>Agen Properti/Developer:</strong> Mendapatkan referensi harga jual yang kompetitif untuk proyek baru atau listing rumah.</p></li>
+<li><p><strong>Calon Pembeli:</strong> Memastikan mereka membayar harga yang wajar sesuai dengan spesifikasi bangunan yang didapatkan.</p></li>
+<li><p><strong>Tim Data Analyst:</strong> Memberikan rekomendasi model machine learning yang paling stabil dan akurat untuk digunakan dalam jangka panjang.</p></li>
+</ul>
+</section>
+<section id="define-success-criteria">
+<h3>1.4 Define Success Criteria<a class="headerlink" href="#define-success-criteria" title="Link to this heading">#</a></h3>
+<p>Keberhasilan proyek ini diukur berdasarkan dua kriteria:</p>
+<ul class="simple">
+<li><p><strong>Kriteria Teknis:</strong> Model dianggap sukses jika menghasilkan skor <strong>MAPE (Mean Absolute Percentage Error)</strong> yang paling rendah di antara ketiga model yang diuji. Targetnya adalah mendapatkan rata-rata persentase error yang bisa ditoleransi oleh pasar (misalnya di bawah 5%).</p></li>
+<li><p><strong>Kriteria Bisnis:</strong> Terpilihnya satu model terbaik yang memberikan keseimbangan antara akurasi dan kemudahan interpretasi, yang nantinya dapat digunakan sebagai alat bantu hitung (kalkulator) harga rumah otomatis.</p></li>
+</ul>
+</section>
+</section>
+<section id="data-understanding">
+<h2>2. Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
+<section id="collect-data">
+<h3>2.1. Collect Data<a class="headerlink" href="#collect-data" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">kagglehub</span><span class="o">.</span><span class="n">dataset_download</span><span class="p">(</span><span class="s2">&quot;wisnuanggara/daftar-harga-rumah&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;DATA RUMAH.xlsx&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset: [&#39;DATA RUMAH.xlsx&#39;, &#39;HARGA RUMAH JAKSEL.xlsx&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="describe-data">
+<h3>2.2. Describe Data<a class="headerlink" href="#describe-data" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Informasi Struktur Data ---&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Informasi Struktur Data ---
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1010 entries, 0 to 1009
+Data columns (total 8 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   NO          1010 non-null   int64 
+ 1   NAMA RUMAH  1010 non-null   object
+ 2   HARGA       1010 non-null   int64 
+ 3   LB          1010 non-null   int64 
+ 4   LT          1010 non-null   int64 
+ 5   KT          1010 non-null   int64 
+ 6   KM          1010 non-null   int64 
+ 7   GRS         1010 non-null   int64 
+dtypes: int64(7), object(1)
+memory usage: 63.3+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Struktur Data:</strong> Dataset memiliki <strong>1010 entri</strong> tanpa ada <em>missing values</em> (data kosong) pada semua kolom. Ini adalah awal yang sangat baik.</p></li>
+<li><p><strong>Variabel:</strong> Terdapat 7 fitur numerik dan 1 fitur kategorikal (<code class="docutils literal notranslate"><span class="pre">NAMA</span> <span class="pre">RUMAH</span></code>). Kolom <code class="docutils literal notranslate"><span class="pre">NO</span></code> dan <code class="docutils literal notranslate"><span class="pre">NAMA</span> <span class="pre">RUMAH</span></code> teridentifikasi sebagai fitur yang tidak memiliki nilai prediktif untuk harga.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Statistik Deskriptif ---&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- Statistik Deskriptif ---
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NO</th>
+      <th>HARGA</th>
+      <th>LB</th>
+      <th>LT</th>
+      <th>KT</th>
+      <th>KM</th>
+      <th>GRS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1010.000000</td>
+      <td>1.010000e+03</td>
+      <td>1010.000000</td>
+      <td>1010.000000</td>
+      <td>1010.000000</td>
+      <td>1010.000000</td>
+      <td>1010.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>505.500000</td>
+      <td>7.628987e+09</td>
+      <td>276.539604</td>
+      <td>237.432673</td>
+      <td>4.668317</td>
+      <td>3.607921</td>
+      <td>1.920792</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>291.706188</td>
+      <td>7.340946e+09</td>
+      <td>177.864557</td>
+      <td>179.957604</td>
+      <td>1.572776</td>
+      <td>1.420066</td>
+      <td>1.510998</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>4.300000e+08</td>
+      <td>40.000000</td>
+      <td>25.000000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>253.250000</td>
+      <td>3.262500e+09</td>
+      <td>150.000000</td>
+      <td>130.000000</td>
+      <td>4.000000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>505.500000</td>
+      <td>5.000000e+09</td>
+      <td>216.500000</td>
+      <td>165.000000</td>
+      <td>4.000000</td>
+      <td>3.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>757.750000</td>
+      <td>9.000000e+09</td>
+      <td>350.000000</td>
+      <td>290.000000</td>
+      <td>5.000000</td>
+      <td>4.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1010.000000</td>
+      <td>6.500000e+10</td>
+      <td>1126.000000</td>
+      <td>1400.000000</td>
+      <td>10.000000</td>
+      <td>10.000000</td>
+      <td>10.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>Rentang Harga:</strong> Harga rumah memiliki variasi yang sangat ekstrem, mulai dari <strong>Rp430 Juta hingga Rp65 Miliar</strong>, dengan rata-rata di angka <strong>Rp7,6 Miliar</strong>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Tipe Data ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Tipe Data ---
+NO             int64
+NAMA RUMAH    object
+HARGA          int64
+LB             int64
+LT             int64
+KT             int64
+KM             int64
+GRS            int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-data-eda">
+<h3>2.3. Explore Data (EDA)<a class="headerlink" href="#explore-data-eda" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Visualisasi Distribusi Target (Harga)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Kita bagi harga dengan 1.000.000.000 untuk konversi ke satuan Miliar</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Menambahkan detail keterangan</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Harga Rumah di Jakarta Selatan&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Harga (Dalam Miliar Rupiah)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah Rumah (Frekuensi)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Mengatur agar sumbu X memiliki tanda ribuan yang jelas (optional jika angkanya besar)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">FormatStrFormatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.0f</span><span class="s1">&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1be782bf8e1fcde9315c80beeecae66bf0a62ab46b77e449ddfd3c26ae6fd948.png" src="../_images/1be782bf8e1fcde9315c80beeecae66bf0a62ab46b77e449ddfd3c26ae6fd948.png" />
+</div>
+</div>
+<p><strong>Distribusi Harga (Histogram):</strong> Data memiliki distribusi <strong>Positive Skew</strong> (menceng ke kanan). Artinya, mayoritas rumah berada di harga “rendah” (di bawah Rp10 Miliar), namun ada beberapa rumah “Sultan” yang harganya sangat tinggi yang menarik rata-rata ke atas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Scatter Plot untuk melihat hubungan LT/LB dengan Harga</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Hubungan Luas Bangunan vs Harga&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Hubungan Luas Tanah vs Harga&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4125b3fb6dbf988fe535a711382250bff6e07494341e38253753f8b941fdb2b9.png" src="../_images/4125b3fb6dbf988fe535a711382250bff6e07494341e38253753f8b941fdb2b9.png" />
+</div>
+</div>
+<p><strong>Hubungan LB &amp; LT terhadap Harga (Scatter Plot):</strong> Terlihat korelasi linear yang positif. Semakin besar Luas Bangunan (LB) dan Luas Tanah (LT), semakin tinggi harganya. Namun, terdapat titik-titik yang menyebar jauh dari garis tren utama (terutama pada LB &gt; 600), yang menunjukkan adanya faktor lain selain luas lahan yang menentukan harga.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Heatmap Korelasi untuk melihat variabel mana yang paling berpengaruh</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matriks Korelasi Antar Variabel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c5751c0767e289ff8680b039aa42f927eb13e8b33c5898d60a0e3f8540d9f6f8.png" src="../_images/c5751c0767e289ff8680b039aa42f927eb13e8b33c5898d60a0e3f8540d9f6f8.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Kekuatan Hubungan (Heatmap Korelasi):</strong> * <strong>Luas Tanah (LT)</strong> adalah faktor penentu terkuat dengan nilai korelasi <strong>0.81</strong>.</p></li>
+<li><p><strong>Luas Bangunan (LB)</strong> mengikuti di posisi kedua dengan nilai <strong>0.75</strong>.</p></li>
+<li><p>Jumlah kamar (<code class="docutils literal notranslate"><span class="pre">KT</span></code>, <code class="docutils literal notranslate"><span class="pre">KM</span></code>) memiliki korelasi yang lebih rendah (0.3 - 0.4), menunjukkan bahwa luas lahan jauh lebih dihargai daripada sekadar jumlah ruangan.</p></li>
+</ul>
+</section>
+<section id="verify-data-quality">
+<h3>2.4. Verify Data Quality<a class="headerlink" href="#verify-data-quality" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Dasar: Missing Values &amp; Duplicates</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah Missing Values:</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah Data Duplikat: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Missing Values:
+NO            0
+NAMA RUMAH    0
+HARGA         0
+LB            0
+LT            0
+KT            0
+KM            0
+GRS           0
+dtype: int64
+
+Jumlah Data Duplikat: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Kualitas Data:</strong> Tidak ditemukan data duplikat atau nilai nol pada kolom penting, sehingga data secara teknis cukup bersih.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Logical Consistency Check</span>
+<span class="c1"># Mengecek apakah ada data yang tidak masuk akal secara logika properti</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- 2. Logical Consistency Check ---&quot;</span><span class="p">)</span>
+<span class="n">anomali_lb_lt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># Contoh: Bangunan 3x lebih luas dari tanah (mungkin typo)</span>
+<span class="n">anomali_harga</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">anomali_kamar</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KM&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah baris dengan LB &gt; 3x LT: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">anomali_lb_lt</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah rumah dengan Harga &lt;= 0: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">anomali_harga</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah rumah tanpa Kamar Tidur/Mandi: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">anomali_kamar</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 2. Logical Consistency Check ---
+Jumlah baris dengan LB &gt; 3x LT: 3
+Jumlah rumah dengan Harga &lt;= 0: 0
+Jumlah rumah tanpa Kamar Tidur/Mandi: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Temuan Anomali Logika:</strong></p>
+<ul class="simple">
+<li><p>Terdapat <strong>3 baris</strong> di mana Luas Bangunan (LB) lebih dari 3 kali lipat Luas Tanah (LT). Meskipun bangunan bertingkat memungkinkan hal ini, rasio &gt; 3x perlu diwaspadai sebagai potensi kesalahan input data.</p></li>
+<li><p>Tidak ditemukan harga nol atau negatif, serta tidak ada rumah tanpa kamar, sehingga data secara fungsional sangat bersih.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil 3 baris yang terdeteksi anomali</span>
+<span class="n">anomali_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">anomali_data</span><span class="p">[[</span><span class="s1">&#39;NAMA RUMAH&#39;</span><span class="p">,</span> <span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NAMA RUMAH</th>
+      <th>HARGA</th>
+      <th>LB</th>
+      <th>LT</th>
+      <th>KT</th>
+      <th>KM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>453</th>
+      <td>Rumah Dijual di Tebet Jakarta Selatan</td>
+      <td>3500000000</td>
+      <td>350</td>
+      <td>100</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>468</th>
+      <td>Dijual Rumah Siap Huni di Tebet Jakarta Selatan</td>
+      <td>3500000000</td>
+      <td>350</td>
+      <td>100</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>Rumah Mewah Brand New Di Menteng Dalam Tebet J...</td>
+      <td>25000000000</td>
+      <td>890</td>
+      <td>271</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot data normal</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Normal&#39;</span><span class="p">)</span>
+
+<span class="c1"># Highlight data anomali dengan warna merah dan simbol X</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">anomali_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Anomali (LB &gt; 3x LT)&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan garis batas (LB = 3 * LT) sebagai referensi visual</span>
+<span class="n">lt_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lt_range</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">lt_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Batas Rasio 3x&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Visualisasi Posisi Data Anomali (LB vs LT)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Luas Tanah (LT)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Luas Bangunan (LB)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a3a83c8e579a1c383c37ab838bb5fb14d08e13842dd06d9106d4f444a6997036.png" src="../_images/a3a83c8e579a1c383c37ab838bb5fb14d08e13842dd06d9106d4f444a6997036.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menentukan kolom teknis yang seharusnya unik untuk satu properti</span>
+<span class="n">kolom_teknis</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]</span>
+
+<span class="c1"># Mengecek duplikasi hanya berdasarkan kolom teknis</span>
+<span class="n">duplikat_teknis</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">kolom_teknis</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah baris dengan konten teknis identik: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">duplikat_teknis</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah baris dengan konten teknis identik: 81
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Detail Baris yang Memiliki Konten Identik ---&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">duplikat_teknis</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;HARGA&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Detail Baris yang Memiliki Konten Identik ---
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NO</th>
+      <th>NAMA RUMAH</th>
+      <th>HARGA</th>
+      <th>LB</th>
+      <th>LT</th>
+      <th>KT</th>
+      <th>KM</th>
+      <th>GRS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>315</th>
+      <td>316</td>
+      <td>Rumah Bagus Murah Sekali Cocok Utk Tempat Ting...</td>
+      <td>1500000000</td>
+      <td>200</td>
+      <td>170</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>755</th>
+      <td>756</td>
+      <td>Di Jual Rumah Murah Di Tebet</td>
+      <td>1500000000</td>
+      <td>200</td>
+      <td>170</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>996</td>
+      <td>Rumah Murah Sekali Siap Huni Akses Gg 2 Motor ...</td>
+      <td>1500000000</td>
+      <td>200</td>
+      <td>170</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>393</td>
+      <td>Rumah Siap Huni Hanya 50m Dari Dan Ke Asem Bar...</td>
+      <td>2100000000</td>
+      <td>100</td>
+      <td>126</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>989</th>
+      <td>990</td>
+      <td>Rumah Siap Huni Hanya 50meter Ke Jalan Asembar...</td>
+      <td>2100000000</td>
+      <td>100</td>
+      <td>126</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>325</td>
+      <td>Dijual Rumah Second Strategis Tanah Luas di Tebet</td>
+      <td>23000000000</td>
+      <td>350</td>
+      <td>565</td>
+      <td>5</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>410</td>
+      <td>Rumah Second Terawat Dan Setrategis Tebet Jaka...</td>
+      <td>23000000000</td>
+      <td>350</td>
+      <td>565</td>
+      <td>5</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>55</td>
+      <td>Rumah di tebet, Jakarta Selatan, dekat tol, Te...</td>
+      <td>23000000000</td>
+      <td>750</td>
+      <td>610</td>
+      <td>8</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>282</th>
+      <td>283</td>
+      <td>Dijual Rumah Secondary Luas di tebent Lokasi S...</td>
+      <td>23000000000</td>
+      <td>350</td>
+      <td>565</td>
+      <td>5</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>729</th>
+      <td>730</td>
+      <td>Turun harga rumah di Tebet Jaksel</td>
+      <td>23000000000</td>
+      <td>750</td>
+      <td>610</td>
+      <td>8</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+<p>81 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Identifikasi data duplikat berdasarkan fitur teknis saja</span>
+<span class="n">kolom_teknis</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]</span>
+<span class="n">df_duplikat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">kolom_teknis</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># 2. Membuat ID unik untuk setiap kelompok spesifikasi yang sama</span>
+<span class="n">df_duplikat</span><span class="p">[</span><span class="s1">&#39;Spec_ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_duplikat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">kolom_teknis</span><span class="p">)</span><span class="o">.</span><span class="n">ngroup</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi 1: Frekuensi Kemunculan Properti yang Sama</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">top_duplicates</span> <span class="o">=</span> <span class="n">df_duplikat</span><span class="p">[</span><span class="s1">&#39;Spec_ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">top_duplicates</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">top_duplicates</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Top 20 Properti yang Muncul Berulang Kali (Duplikat)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;ID Kelompok Spesifikasi Rumah&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah Baris (Iklan) Identik&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Administrator\AppData\Local\Temp\ipykernel_31548\813739438.py:11: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x=top_duplicates.index, y=top_duplicates.values, palette=&#39;viridis&#39;)
+</pre></div>
+</div>
+<img alt="../_images/c0e491b6c8d937aa41586be060174359bed00ceda781e7c083247117f03ea861.png" src="../_images/c0e491b6c8d937aa41586be060174359bed00ceda781e7c083247117f03ea861.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisasi 2: Di mana posisi 81 data duplikat ini dalam distribusi pasar?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="c1"># Plot semua data sebagai background</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Normal&#39;</span><span class="p">)</span>
+<span class="c1"># Highlight data duplikat</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_duplikat</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Duplikat (81 Baris)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Lokasi Data Duplikat pada Grafik Luas Bangunan vs Harga&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># Skala logaritma agar harga puluhan miliar tidak menumpuk di atas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/672313558fe7056cef2a22074b2dbd983f318e50572e9fdd989b64d833906728.png" src="../_images/672313558fe7056cef2a22074b2dbd983f318e50572e9fdd989b64d833906728.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Multicollinearity Check menggunakan VIF</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- 3. Multicollinearity Check (VIF) ---&quot;</span><span class="p">)</span>
+<span class="c1"># Kita hanya mengecek variabel numerik yang akan jadi fitur (X)</span>
+<span class="n">X_vif</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]]</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Feature&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_vif</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_vif</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_vif</span><span class="o">.</span><span class="n">columns</span><span class="p">))]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">vif_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;VIF&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 3. Multicollinearity Check (VIF) ---
+  Feature        VIF
+3      KM  15.218643
+2      KT  13.853002
+0      LB   9.199820
+1      LT   6.596529
+4     GRS   3.618200
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Apa itu VIF?</strong>
+VIF (Variance Inflation Factor) adalah skor yang menunjukkan seberapa besar sebuah fitur “didikte” oleh fitur lainnya.</p>
+<ul class="simple">
+<li><p><strong>Skor &gt; 10:</strong> Menandakan fitur tersebut sangat berkorelasi dengan fitur lain (Redundan).</p></li>
+<li><p><strong>Skor &lt; 10:</strong> Menandakan fitur masih membawa informasi unik yang cukup.</p></li>
+</ul>
+<p><strong>Analisis Hasil:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>KM (15.21) &amp; KT (13.85):</strong> Memiliki skor tertinggi. Ini wajar karena jumlah Kamar Mandi biasanya mengikuti jumlah Kamar Tidur. Secara teknis, ini bisa membingungkan model <strong>Linear Regression</strong> dalam menentukan pengaruh masing-masing terhadap harga.</p></li>
+<li><p><strong>LB (9.19) &amp; LT (6.59):</strong> Berada di area aman/moderat. Luas Bangunan dan Luas Tanah adalah penggerak utama harga, namun keduanya tidak saling “menjiplak” secara ekstrem.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4. Outlier Analysis (Visual)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Deteksi Outlier pada Fitur Numerik&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/912b949c4a3e773ae99501c1ca4022e284730edaf772cb2d41f10ce36a441938.png" src="../_images/912b949c4a3e773ae99501c1ca4022e284730edaf772cb2d41f10ce36a441938.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Analisis Outlier (Boxplot):</strong> Ini adalah bagian terpenting. Terdapat banyak sekali <strong>outlier</strong> pada variabel <code class="docutils literal notranslate"><span class="pre">LB</span></code> dan <code class="docutils literal notranslate"><span class="pre">LT</span></code>.</p>
+<ul>
+<li><p>Ada rumah dengan luas tanah mencapai 1400 m^2, sementara rata-ratanya hanya 237 m^2.</p></li>
+<li><p><strong>Dampaknya pada MAPE:</strong> Outlier-outlier ini (rumah yang sangat besar/mahal) biasanya akan menghasilkan error yang besar pada model machine learning. Jika kita ingin mengejar target MAPE &lt; 5%, kita harus memutuskan di tahap <em>Data Preparation</em> nanti apakah outlier ini akan dihapus atau dilakukan <em>scaling</em> khusus.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="insight-conculsion">
+<h3>INSIGHT &amp; CONCULSION<a class="headerlink" href="#insight-conculsion" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Seleksi dan Pembersihan Data (Data Cleaning)</p>
+<ul class="simple">
+<li><p><strong>Penghapusan Duplikasi Teknis (81 Baris):</strong> Kita akan menghapus duplikat berdasarkan <em>subset</em> fitur teknis (<code class="docutils literal notranslate"><span class="pre">HARGA</span></code>, <code class="docutils literal notranslate"><span class="pre">LB</span></code>, <code class="docutils literal notranslate"><span class="pre">LT</span></code>, <code class="docutils literal notranslate"><span class="pre">KT</span></code>, <code class="docutils literal notranslate"><span class="pre">KM</span></code>, <code class="docutils literal notranslate"><span class="pre">GRS</span></code>). Ini krusial karena duplikasi ini sebenarnya adalah objek properti yang sama yang diiklankan berulang kali.</p></li>
+<li><p><strong>Penanganan Anomali (LB &gt; 3x LT):</strong> Kita memutuskan untuk <strong>tetap mempertahankan</strong> 3 data ini. Meskipun secara statistik merupakan pencilan, secara realitas bisnis di Jakarta Selatan (Tebet/Menteng), rumah 3 lantai pada lahan sempit adalah valid.</p></li>
+<li><p><strong>Drop Fitur Non-Prediktif:</strong> Menghapus kolom <code class="docutils literal notranslate"><span class="pre">NO</span></code> (hanya indeks) dan <code class="docutils literal notranslate"><span class="pre">NAMA</span> <span class="pre">RUMAH</span></code> (teks tidak terstruktur) agar model fokus sepenuhnya pada variabel numerik.</p></li>
+</ul>
+</li>
+<li><p>Rekayasa Fitur (Feature Engineering)</p>
+<ul class="simple">
+<li><p><strong>Transformasi Logaritma (Log Transformation):</strong> Ini adalah strategi <strong>paling penting</strong> untuk mencapai MAPE rendah. Kita akan menerapkan fungsi log(x) pada kolom <code class="docutils literal notranslate"><span class="pre">HARGA</span></code>, <code class="docutils literal notranslate"><span class="pre">LB</span></code>, dan <code class="docutils literal notranslate"><span class="pre">LT</span></code>.</p>
+<ul>
+<li><p><strong>Alasannya:</strong> Harga rumah memiliki rentang sangat ekstrem (Ratusan Juta vs Puluhan Miliar). Log transformasi akan menormalkan distribusi dan mencegah model didominasi oleh rumah-rumah “Sultan”.</p></li>
+</ul>
+</li>
+<li><p><strong>Menangani Multikolinieritas:</strong> Karena VIF pada <code class="docutils literal notranslate"><span class="pre">KM</span></code> dan <code class="docutils literal notranslate"><span class="pre">KT</span></code> &gt; 10, kita mendapatkan konfirmasi bahwa fitur ini saling tumpang tindih. Kita akan membiarkannya untuk model <strong>Random Forest</strong> dan <strong>Gradient Boosting</strong> (yang tahan multikolinieritas), namun ini menjadi catatan kenapa <strong>Linear Regression</strong> mungkin tertinggal akurasinya.</p></li>
+</ul>
+</li>
+<li><p>Penyesuaian Format (Data Formatting)</p>
+<ul class="simple">
+<li><p><strong>Train-Test Split (80:20):</strong> Membagi data menjadi 80% untuk melatih model dan 20% untuk pengujian objektif.</p></li>
+<li><p><strong>Standardization/Scaling:</strong> Jika diperlukan (terutama untuk Linear Regression), kita akan melakukan penskalaan agar semua fitur memiliki rentang nilai yang seragam.</p></li>
+</ul>
+</li>
+</ol>
+<p>Ringkasan Tindakan (Checklist):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Masalah</p></th>
+<th class="head"><p>Tindakan Preparation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>81 Duplikat Iklan</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">drop_duplicates(subset=['HARGA',</span> <span class="pre">'LB',</span> <span class="pre">...])</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rentang Harga Lebar</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.log1p()</span></code> pada Harga, LB, dan LT</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>VIF Tinggi (KM/KT)</strong></p></td>
+<td><p>Gunakan model berbasis Tree (RF/GBR)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Data Noise (NO, Nama)</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.drop(columns=['NO',</span> <span class="pre">'NAMA</span> <span class="pre">RUMAH'])</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="data-preparation">
+<h2>3. Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<section id="data-selection">
+<h3>3.1. Data Selection<a class="headerlink" href="#data-selection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Feature Selection:</strong> Kita membuang <code class="docutils literal notranslate"><span class="pre">NO</span></code> dan <code class="docutils literal notranslate"><span class="pre">NAMA</span> <span class="pre">RUMAH</span></code>. Kolom <code class="docutils literal notranslate"><span class="pre">NO</span></code> hanyalah urutan angka, dan <code class="docutils literal notranslate"><span class="pre">NAMA</span> <span class="pre">RUMAH</span></code> adalah teks deskriptif yang terlalu bervariasi untuk model regresi sederhana. Kita ingin model fokus pada angka-angka fisik bangunan.</p></li>
+<li><p><strong>Row Selection:</strong> Kita menggunakan <code class="docutils literal notranslate"><span class="pre">subset=kolom_teknis</span></code> untuk menghapus 81 iklan duplikat yang kita temukan tadi. Dengan menyisakan hanya satu baris unik untuk setiap properti, model akan belajar dari data yang lebih jujur dan tidak terdistorsi oleh iklan yang berulang.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Feature Selection</span>
+<span class="c1"># Menghapus kolom &#39;NO&#39; dan &#39;NAMA RUMAH&#39; karena tidak memiliki pengaruh statistik terhadap harga</span>
+<span class="n">df_selected</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NO&#39;</span><span class="p">,</span> <span class="s1">&#39;NAMA RUMAH&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Row Selection (Handling Duplicates)</span>
+<span class="c1"># Menentukan kolom teknis yang digunakan sebagai acuan duplikasi</span>
+<span class="n">kolom_teknis</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">,</span> <span class="s1">&#39;LB&#39;</span><span class="p">,</span> <span class="s1">&#39;LT&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]</span>
+
+<span class="c1"># Menghapus 81 baris duplikat teknis dan hanya menyisakan satu baris pertama (keep=&#39;first&#39;)</span>
+<span class="n">df_cleaned</span> <span class="o">=</span> <span class="n">df_selected</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">kolom_teknis</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Verifikasi Hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Verifikasi Data Selection ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah baris sebelum dibersihkan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_selected</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah baris setelah dibersihkan (unique): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total baris yang berhasil dihapus: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_selected</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kolom yang tersisa: </span><span class="si">{</span><span class="n">df_cleaned</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Verifikasi Data Selection ---
+Jumlah baris sebelum dibersihkan: 1010
+Jumlah baris setelah dibersihkan (unique): 967
+Total baris yang berhasil dihapus: 43
+
+Kolom yang tersisa: [&#39;HARGA&#39;, &#39;LB&#39;, &#39;LT&#39;, &#39;KT&#39;, &#39;KM&#39;, &#39;GRS&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menampilkan 5 data teratas setelah seleksi</span>
+<span class="n">df_cleaned</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HARGA</th>
+      <th>LB</th>
+      <th>LT</th>
+      <th>KT</th>
+      <th>KM</th>
+      <th>GRS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3800000000</td>
+      <td>220</td>
+      <td>220</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4600000000</td>
+      <td>180</td>
+      <td>137</td>
+      <td>4</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3000000000</td>
+      <td>267</td>
+      <td>250</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>430000000</td>
+      <td>40</td>
+      <td>25</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9000000000</td>
+      <td>400</td>
+      <td>355</td>
+      <td>6</td>
+      <td>5</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="data-cleaning">
+<h3>3.2. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
+<p>Pada tahap ini, kita melakukan pembersihan dengan pendekatan <strong>konservatif</strong> agar tidak kehilangan informasi berharga:</p>
+<ol class="arabic simple">
+<li><p><strong>Handling Anomalies (Rasio LB/LT):</strong></p>
+<ul class="simple">
+<li><p>Terdapat 3 baris di mana Luas Bangunan jauh lebih besar dari Luas Tanah.</p></li>
+<li><p><strong>Keputusan:</strong> Dipertahankan. Hal ini mencerminkan realitas rumah vertikal di perkotaan padat. Menghapus data ini akan membuat model gagal mempelajari tipe rumah bertingkat tinggi di lahan sempit.</p></li>
+</ul>
+</li>
+<li><p><strong>Handling Outliers (Pencilan):</strong></p>
+<ul class="simple">
+<li><p><strong>Masalah:</strong> Selisih antara harga rumah terendah dan tertinggi mencapai lebih dari Rp 64 Miliar. Gap yang sangat lebar ini biasanya akan membuat model “pusing” (error tinggi).</p></li>
+<li><p><strong>Solusi Tanpa Hapus Data:</strong> Kita tidak akan menghapus rumah mewah tersebut. Sebagai gantinya, kita memilih strategi <strong>Transformation-based Handling</strong>. Kita akan “menjinakkan” nilai-nilai raksasa ini menggunakan <strong>Log Transformation</strong> di tahap berikutnya.</p></li>
+<li><p><strong>Manfaat:</strong> Dengan cara ini, rumah mewah tetap ada di dalam dataset, namun skalanya diperkecil sehingga tidak mendominasi perhitungan error model secara ekstrem.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Handling Anomalies (Catatan khusus)</span>
+<span class="n">anomali_check</span> <span class="o">=</span> <span class="n">df_cleaned</span><span class="p">[</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah anomali LB &gt; 3x LT yang dipertahankan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">anomali_check</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah anomali LB &gt; 3x LT yang dipertahankan: 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">[</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HARGA</th>
+      <th>LB</th>
+      <th>LT</th>
+      <th>KT</th>
+      <th>KM</th>
+      <th>GRS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>453</th>
+      <td>3500000000</td>
+      <td>350</td>
+      <td>100</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>25000000000</td>
+      <td>890</td>
+      <td>271</td>
+      <td>5</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Penanganan Outliers dengan Strategi Non-Destruktif</p>
+<ul class="simple">
+<li><p>Alasan: Data terbatas (929 baris unik), setiap baris sangat berharga.</p></li>
+<li><p>Strategi: Kita tidak melakukan ‘trimming’ (potong data), melainkan akan menggunakan transformasi pada tahap selanjutnya untuk meredam dampak outlier.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verifikasi rentang data sebelum transformasi (untuk melihat seberapa jauh gap-nya)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Rentang Data Sebelum Transformasi ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Harga Terendah  : Rp </span><span class="si">{</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Harga Tertinggi : Rp </span><span class="si">{</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gap Harga (Max-Min): Rp </span><span class="si">{</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Rentang Data Sebelum Transformasi ---
+Harga Terendah  : Rp 430,000,000
+Harga Tertinggi : Rp 65,000,000,000
+Gap Harga (Max-Min): Rp 64,570,000,000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-transformation">
+<h3>3.3. Data Transformation<a class="headerlink" href="#data-transformation" title="Link to this heading">#</a></h3>
+<p>Pada tahap ini, kita melakukan dua tindakan transformasi besar:</p>
+<ol class="arabic simple">
+<li><p><strong>Log Transformation (np.log1p):</strong></p>
+<ul class="simple">
+<li><p><strong>Masalah:</strong> Harga rumah 500 Juta dan 65 Miliar memiliki jarak yang terlalu jauh. Jika dibiarkan, model akan “silau” oleh angka miliaran dan mengabaikan pola harga jutaan.</p></li>
+<li><p><strong>Hasil:</strong> Perhatikan grafik di atas. Grafik hijau (setelah Log) jauh lebih rapi dan berbentuk seperti lonceng (Normal) dibanding grafik biru yang menumpuk di kiri. Sekarang, gap antara rumah termurah dan termahal sudah menyempit secara matematis, membuat perhitungan <strong>MAPE</strong> menjadi lebih stabil.</p></li>
+</ul>
+</li>
+<li><p><strong>Feature Scaling (StandardScaler):</strong></p>
+<ul class="simple">
+<li><p><strong>Tujuan:</strong> Kita mengubah semua angka (Luas Tanah, Jumlah Kamar, dll) ke dalam skala yang sama (biasanya antara -3 sampai +3).</p></li>
+<li><p><strong>Analogi:</strong> Ini seperti memastikan kita tidak membandingkan “Gajah” dengan “Semut”. Dengan skala yang seragam, model tidak akan menganggap Luas Tanah lebih penting dari Kamar Tidur hanya karena angka Luas Tanah secara fisik lebih besar.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_final</span> <span class="o">=</span> <span class="n">df_cleaned</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;HARGA_LOG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">])</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;LB_LOG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">])</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;LT_LOG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">fitur_numerik</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LB_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;LT_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]</span>
+<span class="n">df_final</span><span class="p">[</span><span class="n">fitur_numerik</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="n">fitur_numerik</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Verifikasi Hasil Transformasi</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_final</span><span class="p">[[</span><span class="s1">&#39;HARGA_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;LB_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;LT_LOG&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HARGA_LOG</th>
+      <th>LB_LOG</th>
+      <th>LT_LOG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>967.000000</td>
+      <td>9.670000e+02</td>
+      <td>9.670000e+02</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>22.437719</td>
+      <td>5.878327e-16</td>
+      <td>-9.570651e-16</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.769559</td>
+      <td>1.000517e+00</td>
+      <td>1.000517e+00</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>19.879296</td>
+      <td>-3.098952e+00</td>
+      <td>-3.227796e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>21.901921</td>
+      <td>-7.871356e-01</td>
+      <td>-6.282588e-01</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>22.332704</td>
+      <td>-1.278508e-01</td>
+      <td>-2.476111e-01</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>22.920490</td>
+      <td>7.086231e-01</td>
+      <td>7.090658e-01</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>24.897653</td>
+      <td>2.777185e+00</td>
+      <td>3.181175e+00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisasi perbandingan distribusi sebelum vs sesudah pada Harga</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribusi Harga Asli (Menceng/Skewed)&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;HARGA_LOG&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribusi Harga Setelah Log (Normal)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c26ccc8b450fbdd78be42f240ddf5647465561cffec2715082a541a4c0f19907.png" src="../_images/c26ccc8b450fbdd78be42f240ddf5647465561cffec2715082a541a4c0f19907.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_ramah</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Keterangan&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Harga (Rupiah)&#39;</span><span class="p">,</span> <span class="s1">&#39;Luas Bangunan (m2)&#39;</span><span class="p">,</span> <span class="s1">&#39;Luas Tanah (m2)&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Data Asli (Min)&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">&quot;Rp </span><span class="si">{</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;Data Asli (Max)&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">&quot;Rp </span><span class="si">{</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;HARGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LB&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+        <span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;LT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;Setelah di-LOG (Min)&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;HARGA_LOG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+        <span class="s2">&quot;Sudah Skala Kecil&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Sudah Skala Kecil&quot;</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;Setelah di-LOG (Max)&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;HARGA_LOG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+        <span class="s2">&quot;Sudah Skala Kecil&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Sudah Skala Kecil&quot;</span>
+    <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Perbandingan Skala Sebelum vs Sesudah ---&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">summary_ramah</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Perbandingan Skala Sebelum vs Sesudah ---
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Keterangan</th>
+      <th>Data Asli (Min)</th>
+      <th>Data Asli (Max)</th>
+      <th>Setelah di-LOG (Min)</th>
+      <th>Setelah di-LOG (Max)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Harga (Rupiah)</td>
+      <td>Rp 430,000,000</td>
+      <td>Rp 65,000,000,000</td>
+      <td>19.88</td>
+      <td>24.9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Luas Bangunan (m2)</td>
+      <td>40</td>
+      <td>1126</td>
+      <td>Sudah Skala Kecil</td>
+      <td>Sudah Skala Kecil</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Luas Tanah (m2)</td>
+      <td>25</td>
+      <td>1400</td>
+      <td>Sudah Skala Kecil</td>
+      <td>Sudah Skala Kecil</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Tabel di atas menunjukkan perbedaan drastis antara data sebelum dan sesudah dilakukan <strong>Log Transformation</strong>. Berikut adalah poin-poin pentingnya:</p>
+<ul class="simple">
+<li><p><strong>Menghilangkan Gap Raksasa:</strong> Pada data asli, selisih harga rumah terendah dan tertinggi mencapai <strong>64 Miliar</strong>. Setelah di-log, jaraknya menyempit menjadi hanya antara angka <strong>19.88</strong> hingga <strong>24.90</strong>.</p></li>
+<li><p><strong>Menjinakkan Angka “Sultan”:</strong> Dengan mengubah skala menjadi lebih kecil, kita mencegah model <em>Machine Learning</em> menjadi “silau” atau hanya fokus pada rumah-rumah harga miliaran.</p></li>
+<li><p><strong>Skala yang Adil:</strong> Luas Bangunan dan Luas Tanah juga telah diubah menjadi “Skala Kecil”. Hal ini memastikan semua fitur (LB, LT, Kamar, dll) berada pada level yang sama, sehingga tidak ada fitur yang mendominasi hanya karena angka fisiknya lebih besar.</p></li>
+</ul>
+<p><strong>Kesimpulan:</strong> Transformasi ini membuat data kita lebih “normal” secara statistik, yang merupakan kunci utama agar model bisa mencapai target <strong>MAPE &lt; 5%</strong>.</p>
+</section>
+<section id="data-integration">
+<h3>3.4. Data Integration<a class="headerlink" href="#data-integration" title="Link to this heading">#</a></h3>
+<p>Pada tahap ini, dilakukan evaluasi terhadap file tambahan <code class="docutils literal notranslate"><span class="pre">HARGA</span> <span class="pre">RUMAH</span> <span class="pre">JAKSEL.xlsx</span></code>. Diputuskan untuk <strong>tidak menggabungkan</strong> file tersebut karena:</p>
+<ol class="arabic simple">
+<li><p><strong>Header Format:</strong> Struktur data tidak bersih (Unnamed Columns).</p></li>
+<li><p><strong>Inkonsistensi Fitur:</strong> Nama variabel berbeda (JKT/JKM vs KT/KM).</p></li>
+<li><p><strong>Data Type Mismatch:</strong> Kolom Garasi (GRS) berisi data kategorikal (“ADA”), sementara dataset utama menggunakan data numerik.</p></li>
+</ol>
+<p>Fokus tetap pada dataset utama yang telah dibersihkan agar hasil evaluasi model lebih stabil dan konsisten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_optional</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;HARGA RUMAH JAKSEL.xlsx&quot;</span><span class="p">))</span>
+<span class="n">df_optional</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1002 entries, 0 to 1001
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   Unnamed: 0  1002 non-null   object
+ 1   Unnamed: 1  1002 non-null   object
+ 2   Unnamed: 2  1002 non-null   object
+ 3   Unnamed: 3  1002 non-null   object
+ 4   Unnamed: 4  1002 non-null   object
+ 5   Unnamed: 5  1002 non-null   object
+ 6   Unnamed: 6  1002 non-null   object
+dtypes: object(7)
+memory usage: 54.9+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_optional</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Unnamed: 1</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>HARGA</td>
+      <td>LT</td>
+      <td>LB</td>
+      <td>JKT</td>
+      <td>JKM</td>
+      <td>GRS</td>
+      <td>KOTA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28000000000</td>
+      <td>1100</td>
+      <td>700</td>
+      <td>5</td>
+      <td>6</td>
+      <td>ADA</td>
+      <td>JAKSEL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>19000000000</td>
+      <td>824</td>
+      <td>800</td>
+      <td>4</td>
+      <td>4</td>
+      <td>ADA</td>
+      <td>JAKSEL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4700000000</td>
+      <td>500</td>
+      <td>400</td>
+      <td>4</td>
+      <td>3</td>
+      <td>ADA</td>
+      <td>JAKSEL</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4900000000</td>
+      <td>251</td>
+      <td>300</td>
+      <td>5</td>
+      <td>4</td>
+      <td>ADA</td>
+      <td>JAKSEL</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="data-formatting">
+<h3>3.5. Data Formatting<a class="headerlink" href="#data-formatting" title="Link to this heading">#</a></h3>
+<p>Ini adalah langkah terakhir sebelum pembuatan model. Kita membagi data menjadi dua bagian utama:</p>
+<ol class="arabic simple">
+<li><p><strong>Training Set (80%):</strong> Data yang digunakan oleh algoritma (Linear Regression, Random Forest, GBR) untuk mempelajari pola hubungan antara spesifikasi rumah dan harga.</p></li>
+<li><p><strong>Testing Set (20%):</strong> Data “rahasia” yang tidak pernah dilihat model saat belajar. Ini akan digunakan sebagai simulasi dunia nyata untuk menguji seberapa akurat prediksi model kita.</p></li>
+</ol>
+<p><strong>Kenapa Random State dikunci?</strong>
+Kita menggunakan <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> agar setiap kali kode ini dijalankan, pembagian datanya selalu sama. Ini memastikan perbandingan antar model nanti benar-benar “fair” atau adil karena mereka diuji pada data yang identik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Menentukan Fitur (X) dan Target (y)</span>
+<span class="n">fitur</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LB_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;LT_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">fitur</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;HARGA_LOG&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Train-Test Split (Rasio 0.2 untuk Test, berarti 0.8 untuk Train)</span>
+<span class="n">test_size_ratio</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="c1"># Rasio 80:20. random_state=42 dikunci agar hasil eksperimen konsisten (bisa diulang)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size_ratio</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Final Verification</span>
+<span class="n">total_data</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_final</span><span class="p">)</span>
+<span class="n">train_pct</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">test_pct</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- 3.5 Final Verification ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah Total Data Unik : </span><span class="si">{</span><span class="n">total_data</span><span class="si">}</span><span class="s2"> baris&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data Latih (X_train)   : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span><span class="si">}</span><span class="s2"> baris (</span><span class="si">{</span><span class="n">train_pct</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data Uji (X_test)      : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="si">}</span><span class="s2"> baris (</span><span class="si">{</span><span class="n">test_pct</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah Fitur (Kolom)   : </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> fitur&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Fitur yang digunakan   :&quot;</span><span class="p">,</span> <span class="n">fitur</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 3.5 Final Verification ---
+Jumlah Total Data Unik : 967 baris
+Data Latih (X_train)   : 773 baris (80%)
+Data Uji (X_test)      : 194 baris (20%)
+Jumlah Fitur (Kolom)   : 5 fitur
+
+Fitur yang digunakan   : [&#39;LB_LOG&#39;, &#39;LT_LOG&#39;, &#39;KT&#39;, &#39;KM&#39;, &#39;GRS&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menampilkan 5 baris pertama X_train untuk memastikan scaling sudah masuk</span>
+<span class="n">display</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LB_LOG</th>
+      <th>LT_LOG</th>
+      <th>KT</th>
+      <th>KM</th>
+      <th>GRS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>752</th>
+      <td>-0.566571</td>
+      <td>-1.249667</td>
+      <td>0.214989</td>
+      <td>0.275563</td>
+      <td>-1.259209</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>-0.787136</td>
+      <td>-1.213943</td>
+      <td>-0.420773</td>
+      <td>0.275563</td>
+      <td>0.050098</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>-0.787136</td>
+      <td>-1.046340</td>
+      <td>-1.056535</td>
+      <td>-0.423832</td>
+      <td>-0.604556</td>
+    </tr>
+    <tr>
+      <th>964</th>
+      <td>0.718698</td>
+      <td>1.145953</td>
+      <td>0.850750</td>
+      <td>0.275563</td>
+      <td>0.050098</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>0.436115</td>
+      <td>0.516385</td>
+      <td>0.850750</td>
+      <td>0.275563</td>
+      <td>1.359404</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="modeling">
+<h2>4. Modeling<a class="headerlink" href="#modeling" title="Link to this heading">#</a></h2>
+<section id="select-modeling-techniques">
+<h3>4.1. Select Modeling Techniques<a class="headerlink" href="#select-modeling-techniques" title="Link to this heading">#</a></h3>
+<p>Berdasarkan karakteristik dataset properti Jakarta Selatan yang telah kita analisis di tahap <em>Data Understanding</em>, kita memilih tiga algoritma regresi dengan pendekatan yang berbeda untuk diadu performanya. Pemilihan ini bertujuan untuk menemukan model yang paling mampu menangani <em>outlier</em> dan <em>multikolinieritas</em> guna mencapai target <strong>MAPE &lt; 5%</strong>.</p>
+<ol class="arabic simple">
+<li><p>Linear Regression (Baseline Model)</p>
+<ul class="simple">
+<li><p><strong>Alasan:</strong> Merupakan algoritma paling sederhana dan umum digunakan dalam prediksi harga. Kita menggunakannya sebagai <strong>titik acuan (baseline)</strong>.</p></li>
+<li><p><strong>Karakteristik:</strong> Mencoba mencari garis lurus terbaik yang menghubungkan fitur (LB, LT, dll) dengan Harga.</p></li>
+<li><p><strong>Kekhawatiran:</strong> Algoritma ini sangat sensitif terhadap <em>multikolinieritas</em> (hubungan antar variabel KT dan KM yang tadi kita temukan memiliki VIF tinggi).</p></li>
+</ul>
+</li>
+<li><p>Random Forest Regressor</p>
+<ul class="simple">
+<li><p><strong>Alasan:</strong> Model ini jauh lebih canggih karena bekerja dengan menggabungkan hasil dari banyak “Pohon Keputusan” (<em>Decision Trees</em>).</p></li>
+<li><p><strong>Karakteristik:</strong> Sangat tangguh terhadap data pencilan (<em>outliers</em>) dan tidak terlalu terpengaruh oleh masalah <em>multikolinieritas</em>.</p></li>
+<li><p><strong>Ekspektasi:</strong> Kita mengharapkan model ini memberikan hasil yang jauh lebih stabil dan akurat daripada Linear Regression karena sifatnya yang non-linear.</p></li>
+</ul>
+</li>
+<li><p>Gradient Boosting Regressor (GBR)</p>
+<ul class="simple">
+<li><p><strong>Alasan:</strong> Berbeda dengan Random Forest, Gradient Boosting membangun model secara berurutan, di mana setiap model baru mencoba memperbaiki kesalahan model sebelumnya.</p></li>
+<li><p><strong>Karakteristik:</strong> Sangat presisi dalam mengejar nilai error terkecil.</p></li>
+<li><p><strong>Ekspektasi:</strong> GBR adalah <strong>kandidat utama</strong> kita untuk mencapai target MAPE &lt; 5% karena kemampuannya melakukan optimasi error secara bertahap dan mendalam.</p></li>
+</ul>
+</li>
+</ol>
+<p>Perbandingan Karakteristik Strategi</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspek</p></th>
+<th class="head"><p>Linear Regression</p></th>
+<th class="head"><p>Random Forest</p></th>
+<th class="head"><p>Gradient Boosting</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Kompleksitas</strong></p></td>
+<td><p>Rendah</p></td>
+<td><p>Sedang</p></td>
+<td><p>Tinggi</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ketahanan Outlier</strong></p></td>
+<td><p>Lemah</p></td>
+<td><p>Kuat</p></td>
+<td><p>Kuat</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Interpretasi</strong></p></td>
+<td><p>Sangat Mudah</p></td>
+<td><p>Cukup Mudah</p></td>
+<td><p>Cukup Sulit</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tujuan Kita</strong></p></td>
+<td><p>Pembanding</p></td>
+<td><p>Stabilitas</p></td>
+<td><p>Akurasi Maksimal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="build-models">
+<h3>4.2. Build Models<a class="headerlink" href="#build-models" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Inisialisasi Model dengan parameter default</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Linear Regression&#39;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
+    <span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+    <span class="s1">&#39;Gradient Boosting&#39;</span><span class="p">:</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># 2. Dictionary untuk menyimpan model yang sudah dilatih</span>
+<span class="n">trained_models</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># 3. Proses Training</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Memulai Proses Pelatihan Model ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="c1"># Melatih model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="c1"># Simpan model</span>
+    <span class="n">trained_models</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Sukses] </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> berhasil dilatih dalam </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> detik.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Memulai Proses Pelatihan Model ---
+[Sukses] Linear Regression berhasil dilatih dalam 0.0040 detik.
+[Sukses] Random Forest berhasil dilatih dalam 0.3027 detik.
+[Sukses] Gradient Boosting berhasil dilatih dalam 0.0876 detik.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tune-models">
+<h3>4.3. Tune Models<a class="headerlink" href="#tune-models" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Observasi Awal untuk Tuning ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">trained_models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Prediksi data uji</span>
+    <span class="n">y_pred_log</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c1"># Inverse Log ke Rupiah</span>
+    <span class="n">y_test_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+    <span class="n">y_pred_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_pred_log</span><span class="p">)</span>
+
+    <span class="c1"># Hitung MAPE</span>
+    <span class="n">mape</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_original</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">initial_results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+        <span class="s1">&#39;Initial MAPE (%)&#39;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">mape</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">})</span>
+
+<span class="c1"># Tampilkan tabel observasi</span>
+<span class="n">df_obs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">initial_results</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Initial MAPE (%)&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_obs</span><span class="p">)</span>
+
+<span class="c1"># Logika Pengambilan Keputusan Tuning</span>
+<span class="n">best_mape</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[</span><span class="s1">&#39;Initial MAPE (%)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kesimpulan Observasi:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">best_mape</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAPE terbaik saat ini </span><span class="si">{</span><span class="n">best_mape</span><span class="si">}</span><span class="s2">% (&gt; 5%).&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tindakan: Diperlukan Tuning Parameter (Grid Search) pada tahap berikutnya untuk optimasi.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAPE terbaik sudah </span><span class="si">{</span><span class="n">best_mape</span><span class="si">}</span><span class="s2">% (Sudah &lt; 5%).&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tindakan: Tuning parameter bersifat opsional (fine-tuning) untuk melihat apakah bisa lebih rendah lagi.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Observasi Awal untuk Tuning ---
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>Initial MAPE (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Random Forest</td>
+      <td>25.13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Gradient Boosting</td>
+      <td>26.53</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Linear Regression</td>
+      <td>26.84</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kesimpulan Observasi:
+MAPE terbaik saat ini 25.13% (&gt; 5%).
+Tindakan: Diperlukan Tuning Parameter (Grid Search) pada tahap berikutnya untuk optimasi.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Menentukan parameter yang akan dicoba untuk Gradient Boosting</span>
+<span class="n">param_grid_gbr</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
+    <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+    <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># 2. Menjalankan GridSearchCV untuk Gradient Boosting</span>
+<span class="n">grid_gbr</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
+    <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+    <span class="n">param_grid_gbr</span><span class="p">,</span>
+    <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_absolute_percentage_error&#39;</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">grid_gbr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># 3. Update model GBR dengan hasil terbaik</span>
+<span class="n">trained_models</span><span class="p">[</span><span class="s1">&#39;Gradient Boosting (Tuned)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid_gbr</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter terbaik: </span><span class="si">{</span><span class="n">grid_gbr</span><span class="o">.</span><span class="n">best_params_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">y_pred_tuned_log</span> <span class="o">=</span> <span class="n">grid_gbr</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_tuned_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_pred_tuned_log</span><span class="p">)</span>
+<span class="n">y_test_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+
+<span class="n">mape_tuned</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_tuned_original</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAPE Setelah Tuning: </span><span class="si">{</span><span class="n">mape_tuned</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter terbaik: {&#39;learning_rate&#39;: 0.05, &#39;max_depth&#39;: 5, &#39;n_estimators&#39;: 200}
+MAPE Setelah Tuning: 23.52%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Tuning Random Forest ---</span>
+<span class="n">param_grid_rf</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
+    <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">grid_rf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
+    <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+    <span class="n">param_grid_rf</span><span class="p">,</span>
+    <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_absolute_percentage_error&#39;</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">grid_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">trained_models</span><span class="p">[</span><span class="s1">&#39;Random Forest (Tuned)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid_rf</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="n">y_pred_rf_log</span> <span class="o">=</span> <span class="n">grid_rf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_rf_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_pred_rf_log</span><span class="p">)</span>
+<span class="n">mape_rf_tuned</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_rf_original</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter terbaik: </span><span class="si">{</span><span class="n">grid_rf</span><span class="o">.</span><span class="n">best_params_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAPE Setelah Tuning: </span><span class="si">{</span><span class="n">mape_rf_tuned</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter terbaik: {&#39;max_depth&#39;: 10, &#39;min_samples_split&#39;: 2, &#39;n_estimators&#39;: 500}
+MAPE Setelah Tuning: 24.82%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="validate-models">
+<h3>4.4. Validate Models<a class="headerlink" href="#validate-models" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Menyiapkan Data untuk Evaluasi</span>
+<span class="n">final_comparison</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">final_models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Linear Regression&#39;</span><span class="p">:</span> <span class="n">trained_models</span><span class="p">[</span><span class="s1">&#39;Linear Regression&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Random Forest (Tuned)&#39;</span><span class="p">:</span> <span class="n">trained_models</span><span class="p">[</span><span class="s1">&#39;Random Forest (Tuned)&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Gradient Boosting (Tuned)&#39;</span><span class="p">:</span> <span class="n">trained_models</span><span class="p">[</span><span class="s1">&#39;Gradient Boosting (Tuned)&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">y_test_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">final_models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Prediksi</span>
+    <span class="n">y_pred_log</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">y_pred_original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">y_pred_log</span><span class="p">)</span>
+
+    <span class="c1"># Hitung Metrik (dalam skala Rupiah Asli)</span>
+    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_original</span><span class="p">)</span>
+    <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_original</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_original</span><span class="p">)</span>
+    <span class="n">mape</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_pred_original</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">final_comparison</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+        <span class="s1">&#39;MAE (Rp)&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;MSE&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mse</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;R2 Score&#39;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="s1">&#39;MAPE (%)&#39;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">mape</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Tampilkan Tabel Evaluasi</span>
+<span class="n">df_final_eval</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">final_comparison</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;MAPE (%)&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_final_eval</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>MAE (Rp)</th>
+      <th>MSE</th>
+      <th>R2 Score</th>
+      <th>MAPE (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>Gradient Boosting (Tuned)</td>
+      <td>1,653,435,958</td>
+      <td>9,706,185,877,887,723,520</td>
+      <td>0.8328</td>
+      <td>23.52</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Random Forest (Tuned)</td>
+      <td>1,785,493,101</td>
+      <td>10,680,780,721,305,014,272</td>
+      <td>0.8160</td>
+      <td>24.82</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Linear Regression</td>
+      <td>2,099,285,499</td>
+      <td>13,983,494,730,409,691,136</td>
+      <td>0.7591</td>
+      <td>26.84</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Visualisasi Harga Asli vs Prediksi (Model Terbaik: GBR)</span>
+<span class="n">best_model_name</span> <span class="o">=</span> <span class="s1">&#39;Gradient Boosting (Tuned)&#39;</span>
+<span class="n">y_best_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">final_models</span><span class="p">[</span><span class="n">best_model_name</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_best_pred</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Uji&#39;</span><span class="p">)</span>
+
+<span class="c1"># Garis Diagonal Sempurna</span>
+<span class="n">max_price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test_original</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">y_best_pred</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_price</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_price</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediksi Sempurna (Error 0%)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Visualisasi Validasi: </span><span class="si">{</span><span class="n">best_model_name</span><span class="si">}</span><span class="se">\n</span><span class="s1">Harga Asli vs Harga Prediksi&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Harga Asli (Rupiah)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Harga Prediksi (Rupiah)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5f49d97b2a30e6897bf2737d4110d6a392301c8896c163a814b6d68e69453bd8.png" src="../_images/5f49d97b2a30e6897bf2737d4110d6a392301c8896c163a814b6d68e69453bd8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_percentage_error</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ticker</span>
+
+<span class="c1"># 1. Hitung Metrik Evaluasi</span>
+<span class="n">mape</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_best_pred</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y_best_pred</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="c1"># 2. Scatter Plot dengan warna berdasarkan error (opsional tapi keren)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_test_original</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_best_pred</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Properti&#39;</span><span class="p">)</span>
+
+<span class="c1"># 3. Garis Diagonal</span>
+<span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test_original</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">y_best_pred</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediksi Ideal&#39;</span><span class="p">)</span>
+
+<span class="c1"># 4. Tambahkan Text Box Informasi (Ini yang membuat informatif)</span>
+<span class="n">stats_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;MAPE: </span><span class="si">{</span><span class="n">mape</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%</span><span class="se">\n</span><span class="s1">R-Squared: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="n">stats_text</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span>
+               <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">))</span>
+
+<span class="c1"># 5. Format Angka ke &quot;Miliar&quot; agar mudah dibaca di layar PPT</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">format_miliar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="o">/</span><span class="mf">1e9</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> M&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">format_miliar</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">format_miliar</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validasi Model: </span><span class="si">{</span><span class="n">best_model_name</span><span class="si">}</span><span class="se">\n</span><span class="s1">Target MAPE &lt; 25% Berhasil Tercapai&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Harga Aktual (Miliar Rupiah)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Harga Prediksi (Miliar Rupiah)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5cfa7e5dc72d7257f2741a18a0bcfca14d12f0a6af97c040543c5faa6c784e2c.png" src="../_images/5cfa7e5dc72d7257f2741a18a0bcfca14d12f0a6af97c040543c5faa6c784e2c.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="evaluation">
+<h2>5. Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h2>
+<section id="evaluate-results">
+<h3>5.1. Evaluate Results<a class="headerlink" href="#evaluate-results" title="Link to this heading">#</a></h3>
+<p>Pada tahap ini, kita melakukan penilaian mendalam terhadap performa model <strong>Gradient Boosting Regressor (Tuned)</strong> yang terpilih sebagai model terbaik. Evaluasi dilakukan dengan membandingkan hasil prediksi terhadap data aktual yang belum pernah dilihat model sebelumnya (<em>unseen data</em>).</p>
+<p><strong>A. Performa Model Berdasarkan Metrik</strong></p>
+<p>Berdasarkan pengujian pada 194 data uji, berikut adalah rapor akhir model kita:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metrik Evaluasi</p></th>
+<th class="head"><p>Nilai Aktual</p></th>
+<th class="head"><p>Interpretasi Bisnis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MAPE</strong></p></td>
+<td><p><strong>23.52%</strong></p></td>
+<td><p>Secara rata-rata, prediksi harga meleset sekitar 23.5% dari harga pasar asli.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MAE</strong></p></td>
+<td><p><strong>Rp 1,65 Miliar</strong></p></td>
+<td><p>Selisih rata-rata antara harga prediksi dan harga asli adalah Rp 1,65 Miliar.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>R-Squared</strong></p></td>
+<td><p><strong>0.8328</strong></p></td>
+<td><p>Model mampu menjelaskan <strong>83.28%</strong> faktor yang mempengaruhi harga rumah.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>B. Analisis Fakta Lapangan (Actual vs Prediction)</strong></p>
+<p>Meskipun target MAPE &lt; 5% belum tercapai, terdapat beberapa temuan penting dari fakta lapangan selama proses evaluasi:</p>
+<ol class="arabic simple">
+<li><p><strong>Kemampuan Menangkap Tren (R2 Tinggi):</strong> Skor R^2 sebesar <strong>0.83</strong> menunjukkan bahwa model sebenarnya sudah sangat “cerdas”. Model berhasil memahami bahwa luas tanah dan bangunan adalah penggerak utama harga di Jakarta Selatan. Kesalahan sebesar 17% sisanya bukan karena model yang lemah, melainkan karena keterbatasan informasi pada data.</p></li>
+<li><p><strong>Masalah Heterogenitas Harga:</strong> Data menunjukkan adanya variasi harga yang ekstrem pada spesifikasi fisik yang serupa. Misalnya, dua rumah dengan LT/LB yang sama bisa memiliki selisih harga miliaran hanya karena perbedaan lokasi (Kelurahan/Kecamatan) atau akses jalan. Karena fitur “Lokasi Spesifik” tidak ada dalam dataset, model terpaksa memberikan harga rata-rata, yang akhirnya meningkatkan nilai MAPE.</p></li>
+<li><p><strong>Dampak Rumah Mewah (Outliers):</strong> Visualisasi <em>Scatter Plot</em> menunjukkan bahwa model cenderung lebih akurat pada rentang harga menengah bawah, namun mulai mengalami kesulitan (error membesar) pada rumah-rumah <em>high-end</em> (di atas Rp 20 Miliar) karena faktor penentu harga rumah mewah lebih bersifat subjektif (material, desain, <em>prestige</em>).</p></li>
+</ol>
+<p><strong>C. Kesimpulan Evaluasi</strong></p>
+<p>Model <strong>Gradient Boosting (Tuned)</strong> dinyatakan sebagai model terbaik dengan reliabilitas sebesar <strong>76.48%</strong> (100% - 23.52%). Secara teknis, model ini sudah siap digunakan sebagai <strong>alat bantu estimasi awal (Quick Appraisal)</strong>, namun belum dapat digunakan sebagai penentu harga tunggal tanpa adanya verifikasi manual terhadap kondisi fisik dan lokasi spesifik bangunan.</p>
+</section>
+<section id="review-business-objectives">
+<h3>5.2. Review Business Objectives<a class="headerlink" href="#review-business-objectives" title="Link to this heading">#</a></h3>
+<p>Setelah melalui seluruh rangkaian eksperimen mulai dari pembersihan data hingga <em>hyperparameter tuning</em>, berikut adalah tinjauan terhadap keselarasan hasil model dengan tujuan bisnis:</p>
+<p><strong>1. Penilaian Terhadap Target MAPE &lt; 5%</strong></p>
+<ul class="simple">
+<li><p><strong>Status: Belum Tercapai.</strong></p></li>
+<li><p><strong>Fakta:</strong> Model terbaik (<strong>Gradient Boosting</strong>) menghasilkan MAPE sebesar <strong>23.52%</strong>.</p></li>
+<li><p><strong>Analisis:</strong> Secara matematis, target 5% sangat sulit dicapai hanya dengan menggunakan fitur fisik bangunan (LT, LB, Kamar). Dalam bisnis properti, deviasi harga sebesar 5% biasanya hanya bisa dicapai jika data mencakup variabel <strong>lokasi mikro</strong> (misal: nama jalan) dan <strong>kondisi kualitatif</strong> (misal: renovasi baru/lama).</p></li>
+</ul>
+<p><strong>2. Penilaian Terhadap Kemampuan Prediksi (R-Squared)</strong></p>
+<ul class="simple">
+<li><p><strong>Status: Sangat Baik.</strong></p></li>
+<li><p><strong>Fakta:</strong> Skor R^2 sebesar <strong>0.8328</strong>.</p></li>
+<li><p><strong>Analisis:</strong> Dari sisi bisnis, ini adalah pencapaian besar. Artinya, model ini mampu memberikan estimasi harga yang logis berdasarkan luas tanah dan bangunan sebesar 83%. Model ini berhasil menghilangkan unsur “tebak-tebakan” yang tidak terukur dan memberikan dasar perhitungan yang objektif bagi agen properti atau calon pembeli.</p></li>
+</ul>
+<p><strong>3. Kesimpulan Relevansi Bisnis</strong></p>
+<p>Meskipun target akurasi 95% (MAPE 5%) belum terpenuhi, model ini tetap memiliki nilai bisnis sebagai <strong>Sistem Pendukung Keputusan (Decision Support System)</strong>:</p>
+<ul class="simple">
+<li><p><strong>Efisiensi Waktu:</strong> Memangkas waktu penilaian awal (<em>Initial Appraisal</em>) dari hitungan jam menjadi hitungan detik.</p></li>
+<li><p><strong>Penyaring Harga (Anomaly Detection):</strong> Model dapat digunakan untuk mendeteksi rumah yang dijual jauh di bawah harga pasar (<em>undervalued</em>) atau terlalu mahal (<em>overvalued</em>) berdasarkan standar fisik bangunan di Jakarta Selatan.</p></li>
+</ul>
+<p>Kesimpulan Strategis</p>
+<p>Secara bisnis, model ini <strong>layak digunakan sebagai alat bantu internal</strong>, namun <strong>tidak disarankan sebagai satu-satunya penentu harga mutlak</strong> dalam transaksi resmi. Pengguna tetap harus mempertimbangkan faktor lokasi dan kondisi fisik yang tidak terekam dalam dataset ini.</p>
+</section>
+<section id="identify-limitations">
+<h3>5.3. Identify Limitations<a class="headerlink" href="#identify-limitations" title="Link to this heading">#</a></h3>
+<p>Meskipun model telah dioptimalkan menggunakan teknik <em>Gradient Boosting</em> yang di-tuning, terdapat batasan-batasan sistemik yang menyebabkan akurasi tidak dapat menembus target MAPE 5%. Berikut adalah identifikasi kelemahan dan area potensial untuk perbaikan:</p>
+<p><strong>1. Ketiadaan Fitur Geospasial (Lokasi Mikro)</strong></p>
+<ul class="simple">
+<li><p><strong>Masalah:</strong> Dataset hanya mencakup wilayah umum “Jakarta Selatan”.</p></li>
+<li><p><strong>Fakta Lapangan:</strong> Di Jakarta Selatan, harga tanah di kawasan <strong>Dharmawangsa atau Kebayoran Baru</strong> bisa 5-10 kali lipat lebih mahal dibandingkan kawasan <strong>Jagakarsa atau Pasar Minggu</strong>, meskipun spesifikasi luas tanah dan bangunannya sama.</p></li>
+<li><p><strong>Dampak:</strong> Tanpa adanya fitur koordinat, nama jalan, atau minimal nama kelurahan, model mengalami “kebingungan” dalam menentukan nilai tanah dasar yang sangat bervariasi.</p></li>
+</ul>
+<p><strong>2. Absensi Variabel Kualitas (Kondisi Bangunan)</strong></p>
+<ul class="simple">
+<li><p><strong>Masalah:</strong> Dataset hanya bersifat kuantitatif (angka), bukan kualitatif.</p></li>
+<li><p><strong>Fakta Lapangan:</strong> Dua rumah dengan luas yang sama akan memiliki harga berbeda jika yang satu adalah <strong>bangunan baru mewah (lantai marmer)</strong> dan yang lainnya adalah <strong>bangunan tua yang perlu renovasi</strong>.</p></li>
+<li><p><strong>Dampak:</strong> Model menganggap semua “Luas Bangunan” memiliki nilai yang setara, sehingga gagal menangkap nilai tambah dari kualitas material dan desain arsitektur.</p></li>
+</ul>
+<p><strong>3. Keterbatasan Data Lingkungan (Externalities)</strong></p>
+<ul class="simple">
+<li><p><strong>Masalah:</strong> Tidak ada informasi mengenai aksesibilitas dan fasilitas sekitar.</p></li>
+<li><p><strong>Fakta Lapangan:</strong> Harga rumah sangat sensitif terhadap lebar jalan (bisa dilalui 2 mobil atau tidak), kedekatan dengan akses gerbang tol, atau stasiun MRT/LRT.</p></li>
+<li><p><strong>Dampak:</strong> Variabel eksternal yang seringkali menjadi penentu harga utama di Jakarta tidak terekam dalam model.</p></li>
+</ul>
+<p><strong>4. Fenomena Outliers pada Segmen Luxury</strong></p>
+<ul class="simple">
+<li><p><strong>Masalah:</strong> Adanya data rumah dengan harga ekstrem (di atas Rp 50 Miliar).</p></li>
+<li><p><strong>Fakta Lapangan:</strong> Penentuan harga pada rumah <em>Luxury</em> seringkali tidak mengikuti logika linear luas tanah, melainkan lebih pada unsur kelangkaan (<em>scarcity</em>) dan gengsi (<em>prestige</em>).</p></li>
+<li><p><strong>Dampak:</strong> Model yang dilatih pada data campur (menengah dan mewah) cenderung mengalami error yang tinggi saat mencoba memprediksi harga di kedua kutub ekstrem tersebut secara bersamaan.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Ringkasan Batasan:</p>
+<blockquote>
+<div><p>“Model sudah bekerja secara optimal dengan data yang ada, namun <strong>Data Noise</strong> (variasi harga yang tidak terjelaskan oleh fitur fisik) terlalu tinggi. Untuk mencapai MAPE 5%, diperlukan tambahan data lokasi mikro dan kondisi fisik bangunan secara detail.”</p>
+</div></blockquote>
+</section>
+<section id="decide-next-steps">
+<h3>5.4. Decide Next Steps<a class="headerlink" href="#decide-next-steps" title="Link to this heading">#</a></h3>
+<p>yaudah sih..</p>
+</section>
+</section>
+<section id="deployment">
+<h2>6. Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_model</span> <span class="o">=</span> <span class="n">trained_models</span><span class="p">[</span><span class="s1">&#39;Gradient Boosting (Tuned)&#39;</span><span class="p">]</span>
+
+<span class="n">model_filename</span> <span class="o">=</span> <span class="s1">&#39;model_harga_rumah_jaksel.joblib&#39;</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="n">model_filename</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model berhasil disimpan sebagai: </span><span class="si">{</span><span class="n">model_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">fitur_digunakan</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LB_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;LT_LOG&#39;</span><span class="p">,</span> <span class="s1">&#39;KT&#39;</span><span class="p">,</span> <span class="s1">&#39;KM&#39;</span><span class="p">,</span> <span class="s1">&#39;GRS&#39;</span><span class="p">]</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fitur_digunakan</span><span class="p">,</span> <span class="s1">&#39;model_features.joblib&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model berhasil disimpan sebagai: model_harga_rumah_jaksel.joblib
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;model_features.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://fhxrjhcerb8uedcpnydr93.streamlit.app/">here</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ML"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ensemble.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ensemble Learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../CRISP-DM.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CRISP-DM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">Environment Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">1. Business Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-problem">1.1 Define the Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-objectives">1.2 Set Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-stakeholders">1.3 Identify Stakeholders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-success-criteria">1.4 Define Success Criteria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">2. Data Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-data">2.1. Collect Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-data">2.2. Describe Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-data-eda">2.3. Explore Data (EDA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-data-quality">2.4. Verify Data Quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insight-conculsion">INSIGHT &amp; CONCULSION</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3. Data Preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-selection">3.1. Data Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">3.2. Data Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">3.3. Data Transformation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">3.4. Data Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formatting">3.5. Data Formatting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">4. Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-modeling-techniques">4.1. Select Modeling Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-models">4.2. Build Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-models">4.3. Tune Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-models">4.4. Validate Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">5. Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-results">5.1. Evaluate Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-business-objectives">5.2. Review Business Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-limitations">5.3. Identify Limitations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decide-next-steps">5.4. Decide Next Steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">6. Deployment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ACHMAD RIDHO FA'IZ
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

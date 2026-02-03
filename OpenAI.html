@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ChatGPT API and Python &#8212; Data-Science Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OpenAI';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="UAS" href="UAS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Edho.png" class="logo__image only-light" alt="Data-Science Project - Home"/>
+    <script>document.write(`<img src="_static/Edho.png" class="logo__image only-dark" alt="Data-Science Project - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="BigData.html">Big Data Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="BigData/Business.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BigData/EDA.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BigData/Input.html">Data Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BigData/Modeling.html">Modeling</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="BigData/Output.html">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BigData/Production.html">Deployment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Citra.html">Image Processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Citra/morphology.html">Morfologi Citra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Citra/UTS.html">UTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Citra/UAS.html">UAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Citra/CNN.html">UAS PCD-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Citra/vision.html">Computer Vision</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ML.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ML/KMeans.html">KMeans Clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ML/Imputation.html">Data Imputation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ML/UTS.html">UTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ML/Ensemble.html">Ensemble Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ML/UAS.html">UAS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="CRISP-DM.html">CRISP-DM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="CRISP-DM/Business.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CRISP-DM/EDA.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CRISP-DM/Input.html">Data Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CRISP-DM/Modeling.html">Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CRISP-DM/Output.html">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CRISP-DM/Production.html">Deployment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Coursework.html">Courseworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas1.html">Tugas 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas2.html">Tugas 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas3.html">Tugas 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas4.html">Tugas 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas5.html">Tugas 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas6.html">Tugas 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas7.html">Tugas 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coursework/tugas8.html">Tugas 8</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS.html">UAS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ChatGPT API and Python</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rhindottire/Data-Science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rhindottire/Data-Science/issues/new?title=Issue%20on%20page%20%2FOpenAI.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OpenAI.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ChatGPT API and Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ChatGPT API and Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-script-for-chatgpt">Python Script for ChatGPT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chat-gpt-in-python">Chat-GPT in Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unfinished">UNFINISHED</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chatgpt-api-and-python">
+<h1><a class="reference external" href="https://medium.com/&#64;obaff/building-a-simple-program-with-chatgpt-api-and-python-dd0e464e71be">ChatGPT API and Python</a><a class="headerlink" href="#chatgpt-api-and-python" title="Link to this heading">#</a></h1>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li><p>Python (version 3.7 or above)</p></li>
+<li><p>Get your API key here: <a class="reference external" href="https://platform.openai.com/api-keys">https://platform.openai.com/api-keys</a></p></li>
+<li><p>OpenAI Python client library (openai)</p></li>
+</ul>
+<p>Setting up the OpenAI API Key</p>
+<ol class="arabic simple">
+<li><p>After signing up at OpenAI, generate an API key from your API keys page.</p></li>
+<li><p>Store this API key securely as you will need it to interact with the ChatGPT API.</p></li>
+</ol>
+<p>Install the required dependencies</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">openai</span>
+</pre></div>
+</div>
+<section id="python-script-for-chatgpt">
+<h2>Python Script for ChatGPT<a class="headerlink" href="#python-script-for-chatgpt" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
+
+<span class="c1"># Load your OpenAI API key</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;your-api-key-here&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_chatgpt_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Completion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;text-davinci-003&quot;</span><span class="p">,</span>  <span class="c1"># Use the desired GPT model</span>
+        <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+        <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># Usage example</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ask ChatGPT: &quot;</span><span class="p">)</span>
+    <span class="n">chatgpt_response</span> <span class="o">=</span> <span class="n">generate_chatgpt_response</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ChatGPT says: </span><span class="si">{</span><span class="n">chatgpt_response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chat-gpt-in-python">
+<h2><a class="reference external" href="https://tomstechacademy.com/code-example-easiest-way-to-use-chat-gpt-in-python/">Chat-GPT in Python</a><a class="headerlink" href="#chat-gpt-in-python" title="Link to this heading">#</a></h2>
+<p>Tutorial here : <a class="reference external" href="https://www.youtube.com/watch?v=Hsr779_pj9U">YouTube</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">RateLimitError</span><span class="p">,</span> <span class="n">AuthenticationError</span><span class="p">,</span> <span class="n">OpenAIError</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_api_key</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;CHATGPT_API_KEY&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">api_key</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;CHATGPT_API_KEY tidak ditemukan di environment&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">api_key</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">get_api_key</span><span class="p">())</span>
+<span class="n">models</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="n">model_ids</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">data</span><span class="p">])</span>
+
+<span class="n">model_ids</span>
+<span class="n">chat_models</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">model_ids</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;gpt-&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">chat_models</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gpt-3.5-turbo&#39;,
+ &#39;gpt-3.5-turbo-0125&#39;,
+ &#39;gpt-3.5-turbo-1106&#39;,
+ &#39;gpt-3.5-turbo-16k&#39;,
+ &#39;gpt-3.5-turbo-instruct&#39;,
+ &#39;gpt-3.5-turbo-instruct-0914&#39;,
+ &#39;gpt-4.1&#39;,
+ &#39;gpt-4.1-2025-04-14&#39;,
+ &#39;gpt-4.1-mini&#39;,
+ &#39;gpt-4.1-mini-2025-04-14&#39;,
+ &#39;gpt-4.1-nano&#39;,
+ &#39;gpt-4.1-nano-2025-04-14&#39;,
+ &#39;gpt-4o&#39;,
+ &#39;gpt-4o-2024-05-13&#39;,
+ &#39;gpt-4o-2024-08-06&#39;,
+ &#39;gpt-4o-2024-11-20&#39;,
+ &#39;gpt-4o-audio-preview&#39;,
+ &#39;gpt-4o-audio-preview-2024-12-17&#39;,
+ &#39;gpt-4o-audio-preview-2025-06-03&#39;,
+ &#39;gpt-4o-mini&#39;,
+ &#39;gpt-4o-mini-2024-07-18&#39;,
+ &#39;gpt-4o-mini-audio-preview&#39;,
+ &#39;gpt-4o-mini-audio-preview-2024-12-17&#39;,
+ &#39;gpt-4o-mini-search-preview&#39;,
+ &#39;gpt-4o-mini-search-preview-2025-03-11&#39;,
+ &#39;gpt-4o-mini-transcribe&#39;,
+ &#39;gpt-4o-mini-transcribe-2025-03-20&#39;,
+ &#39;gpt-4o-mini-transcribe-2025-12-15&#39;,
+ &#39;gpt-4o-mini-tts&#39;,
+ &#39;gpt-4o-mini-tts-2025-03-20&#39;,
+ &#39;gpt-4o-mini-tts-2025-12-15&#39;,
+ &#39;gpt-4o-search-preview&#39;,
+ &#39;gpt-4o-search-preview-2025-03-11&#39;,
+ &#39;gpt-4o-transcribe&#39;,
+ &#39;gpt-4o-transcribe-diarize&#39;,
+ &#39;gpt-5&#39;,
+ &#39;gpt-5-2025-08-07&#39;,
+ &#39;gpt-5-chat-latest&#39;,
+ &#39;gpt-5-codex&#39;,
+ &#39;gpt-5-mini&#39;,
+ &#39;gpt-5-mini-2025-08-07&#39;,
+ &#39;gpt-5-nano&#39;,
+ &#39;gpt-5-nano-2025-08-07&#39;,
+ &#39;gpt-5-pro&#39;,
+ &#39;gpt-5-pro-2025-10-06&#39;,
+ &#39;gpt-5-search-api&#39;,
+ &#39;gpt-5-search-api-2025-10-14&#39;,
+ &#39;gpt-5.1&#39;,
+ &#39;gpt-5.1-2025-11-13&#39;,
+ &#39;gpt-5.1-chat-latest&#39;,
+ &#39;gpt-5.1-codex&#39;,
+ &#39;gpt-5.1-codex-max&#39;,
+ &#39;gpt-5.1-codex-mini&#39;,
+ &#39;gpt-5.2&#39;,
+ &#39;gpt-5.2-2025-12-11&#39;,
+ &#39;gpt-5.2-chat-latest&#39;,
+ &#39;gpt-5.2-pro&#39;,
+ &#39;gpt-5.2-pro-2025-12-11&#39;,
+ &#39;gpt-audio&#39;,
+ &#39;gpt-audio-2025-08-28&#39;,
+ &#39;gpt-audio-mini&#39;,
+ &#39;gpt-audio-mini-2025-10-06&#39;,
+ &#39;gpt-audio-mini-2025-12-15&#39;,
+ &#39;gpt-image-1&#39;,
+ &#39;gpt-image-1-mini&#39;,
+ &#39;gpt-image-1.5&#39;,
+ &#39;gpt-realtime-mini-2025-12-15&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">can_use_chat_model</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;ping&quot;</span><span class="p">}],</span>
+            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">chat_model_status</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">model</span><span class="p">:</span> <span class="n">can_use_chat_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">chat_models</span>
+<span class="p">}</span>
+
+<span class="n">chat_model_status</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;gpt-3.5-turbo&#39;: False,
+ &#39;gpt-3.5-turbo-0125&#39;: False,
+ &#39;gpt-3.5-turbo-1106&#39;: False,
+ &#39;gpt-3.5-turbo-16k&#39;: False,
+ &#39;gpt-3.5-turbo-instruct&#39;: False,
+ &#39;gpt-3.5-turbo-instruct-0914&#39;: False,
+ &#39;gpt-4.1&#39;: False,
+ &#39;gpt-4.1-2025-04-14&#39;: False,
+ &#39;gpt-4.1-mini&#39;: False,
+ &#39;gpt-4.1-mini-2025-04-14&#39;: False,
+ &#39;gpt-4.1-nano&#39;: False,
+ &#39;gpt-4.1-nano-2025-04-14&#39;: False,
+ &#39;gpt-4o&#39;: False,
+ &#39;gpt-4o-2024-05-13&#39;: False,
+ &#39;gpt-4o-2024-08-06&#39;: False,
+ &#39;gpt-4o-2024-11-20&#39;: False,
+ &#39;gpt-4o-audio-preview&#39;: False,
+ &#39;gpt-4o-audio-preview-2024-12-17&#39;: False,
+ &#39;gpt-4o-audio-preview-2025-06-03&#39;: False,
+ &#39;gpt-4o-mini&#39;: False,
+ &#39;gpt-4o-mini-2024-07-18&#39;: False,
+ &#39;gpt-4o-mini-audio-preview&#39;: False,
+ &#39;gpt-4o-mini-audio-preview-2024-12-17&#39;: False,
+ &#39;gpt-4o-mini-search-preview&#39;: False,
+ &#39;gpt-4o-mini-search-preview-2025-03-11&#39;: False,
+ &#39;gpt-4o-mini-transcribe&#39;: False,
+ &#39;gpt-4o-mini-transcribe-2025-03-20&#39;: False,
+ &#39;gpt-4o-mini-transcribe-2025-12-15&#39;: False,
+ &#39;gpt-4o-mini-tts&#39;: False,
+ &#39;gpt-4o-mini-tts-2025-03-20&#39;: False,
+ &#39;gpt-4o-mini-tts-2025-12-15&#39;: False,
+ &#39;gpt-4o-search-preview&#39;: False,
+ &#39;gpt-4o-search-preview-2025-03-11&#39;: False,
+ &#39;gpt-4o-transcribe&#39;: False,
+ &#39;gpt-4o-transcribe-diarize&#39;: False,
+ &#39;gpt-5&#39;: False,
+ &#39;gpt-5-2025-08-07&#39;: False,
+ &#39;gpt-5-chat-latest&#39;: False,
+ &#39;gpt-5-codex&#39;: False,
+ &#39;gpt-5-mini&#39;: False,
+ &#39;gpt-5-mini-2025-08-07&#39;: False,
+ &#39;gpt-5-nano&#39;: False,
+ &#39;gpt-5-nano-2025-08-07&#39;: False,
+ &#39;gpt-5-pro&#39;: False,
+ &#39;gpt-5-pro-2025-10-06&#39;: False,
+ &#39;gpt-5-search-api&#39;: False,
+ &#39;gpt-5-search-api-2025-10-14&#39;: False,
+ &#39;gpt-5.1&#39;: False,
+ &#39;gpt-5.1-2025-11-13&#39;: False,
+ &#39;gpt-5.1-chat-latest&#39;: False,
+ &#39;gpt-5.1-codex&#39;: False,
+ &#39;gpt-5.1-codex-max&#39;: False,
+ &#39;gpt-5.1-codex-mini&#39;: False,
+ &#39;gpt-5.2&#39;: False,
+ &#39;gpt-5.2-2025-12-11&#39;: False,
+ &#39;gpt-5.2-chat-latest&#39;: False,
+ &#39;gpt-5.2-pro&#39;: False,
+ &#39;gpt-5.2-pro-2025-12-11&#39;: False,
+ &#39;gpt-audio&#39;: False,
+ &#39;gpt-audio-2025-08-28&#39;: False,
+ &#39;gpt-audio-mini&#39;: False,
+ &#39;gpt-audio-mini-2025-10-06&#39;: False,
+ &#39;gpt-audio-mini-2025-12-15&#39;: False,
+ &#39;gpt-image-1&#39;: False,
+ &#39;gpt-image-1-mini&#39;: False,
+ &#39;gpt-image-1.5&#39;: False,
+ &#39;gpt-realtime-mini-2025-12-15&#39;: False}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AVAILABLE_CHAT_MODELS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">model</span> <span class="k">for</span> <span class="n">model</span><span class="p">,</span> <span class="n">ok</span> <span class="ow">in</span> <span class="n">chat_model_status</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">ok</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ask_openai</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">AVAILABLE_CHAT_MODELS</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model &#39;</span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39; tidak tersedia untuk API key ini&quot;</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">translate_openai_error</span><span class="p">(</span><span class="n">err</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">RateLimitError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="s2">&quot;OpenAI API quota habis atau billing belum aktif.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;https://platform.openai.com/settings/organization/billing/overview&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">AuthenticationError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;API key OpenAI tidak valid.&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">OpenAIError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;OpenAI API error: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Unexpected error: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Whats the most popular ski resort in Europe?&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">ask_openai</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">translate_openai_error</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unexpected error: Model &#39;gpt-4o-mini&#39; tidak tersedia untuk API key ini
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="unfinished">
+<h1>UNFINISHED<a class="headerlink" href="#unfinished" title="Link to this heading">#</a></h1>
+<p>akses gpt via python code</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/&#64;obaff/building-a-simple-program-with-chatgpt-api-and-python-dd0e464e71be">https://medium.com/&#64;obaff/building-a-simple-program-with-chatgpt-api-and-python-dd0e464e71be</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Hsr779_pj9U">https://www.youtube.com/watch?v=Hsr779_pj9U</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_a0hvV1qugM">https://www.youtube.com/watch?v=_a0hvV1qugM</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;tam.tamanna18/ontologies-and-knowledge-graphs-building-smarter-data-systems-47e3fbb63796">https://medium.com/&#64;tam.tamanna18/ontologies-and-knowledge-graphs-building-smarter-data-systems-47e3fbb63796</a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="UAS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">UAS</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ChatGPT API and Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-script-for-chatgpt">Python Script for ChatGPT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chat-gpt-in-python">Chat-GPT in Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unfinished">UNFINISHED</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ACHMAD RIDHO FA'IZ
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
